@@ -15,29 +15,26 @@
     html{scroll-behavior:smooth;}
     body{background:var(--warm-white);color:var(--espresso);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
 
-    /* ── HERO ── */
-    .hero{position:relative;background:var(--espresso);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:3rem 2rem 5rem;}
+    .hero{position:relative;background:var(--espresso);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:3rem 2rem 6rem;}
     .hero-bg{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 20%,rgba(196,125,62,.12) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(196,125,62,.08) 0%,transparent 50%);pointer-events:none;}
     .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(196,125,62,.06) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(196,125,62,.04) 60px);pointer-events:none;}
-    .hero-badge{font-size:.65rem;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,168,83,.35);padding:.4rem 1.2rem;margin-bottom:2.5rem;animation:fadeUp .8s ease both;position:relative;z-index:1;}
-    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,20vw,10rem);font-weight:900;color:var(--cream);line-height:.9;text-align:center;letter-spacing:-.02em;animation:fadeUp .9s ease .1s both;position:relative;z-index:1;}
-    .hero-subtitle{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--caramel);font-size:clamp(1rem,4vw,1.8rem);letter-spacing:.06em;margin-top:.5em;line-height:1.2;}
-    .hero-divider{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:2.2rem auto;animation:fadeUp 1s ease .2s both;position:relative;z-index:1;}
-    .hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.25rem);color:var(--light-smoke);font-weight:300;text-align:center;animation:fadeUp 1s ease .3s both;position:relative;z-index:1;line-height:1.5;max-width:480px;}
-    .hero-scroll{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fadeUp 1s ease .5s both;z-index:1;}
-    .hero-scroll-label{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--smoke);}
-    .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--caramel),transparent);animation:scrollPulse 2s ease infinite;}
+    .hero-badge{font-size:.65rem;font-weight:500;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,168,83,.35);padding:.45rem 1.3rem;margin-bottom:2.8rem;animation:fadeUp .8s ease both;position:relative;z-index:1;}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,20vw,10rem);font-weight:900;color:var(--cream);line-height:.92;text-align:center;letter-spacing:-.02em;animation:fadeUp .9s ease .1s both;position:relative;z-index:1;}
+    .hero-subtitle{display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:var(--caramel);font-size:clamp(1.05rem,4vw,1.9rem);letter-spacing:.08em;margin-top:.45em;line-height:1.2;}
+    .hero-divider{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:2.5rem auto;animation:fadeUp 1s ease .2s both;position:relative;z-index:1;}
+    .hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.3rem);color:var(--light-smoke);font-weight:300;text-align:center;animation:fadeUp 1s ease .3s both;position:relative;z-index:1;line-height:1.5;max-width:480px;}
+    .hero-scroll{position:absolute;bottom:2.8rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;animation:fadeUp 1s ease .5s both;z-index:1;}
+    .hero-scroll-label{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--smoke);}
+    .scroll-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--caramel),transparent);animation:scrollPulse 2s ease infinite;}
 
-    /* ── NAV ── */
-    .category-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(196,125,62,.15);padding:.75rem 1rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;}
+    .category-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(196,125,62,.15);padding:.75rem 1rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;}
     .category-nav::-webkit-scrollbar{display:none;}
     .cat-btn{flex-shrink:0;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);background:transparent;border:1px solid rgba(138,125,114,.3);padding:.42rem .95rem;cursor:pointer;border-radius:2px;transition:all .25s;white-space:nowrap;}
     .cat-btn:hover,.cat-btn.active{background:var(--espresso);color:var(--cream);border-color:var(--espresso);}
 
-    /* ── MENU ── */
-    .menu-wrapper{max-width:820px;margin:0 auto;padding:0 1.2rem 6rem;}
-    .menu-section{padding-top:4rem;}
-    .section-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:.5rem;}
+    .menu-wrapper{max-width:820px;margin:0 auto;padding:0 1.2rem 6rem;position:relative;}
+    .menu-section{padding-top:4rem;position:relative;}
+    .section-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:.5rem;position:relative;}
     .section-icon{font-size:1.6rem;line-height:1;}
     .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,6vw,2.8rem);font-weight:700;line-height:1;}
     .section-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--smoke);margin-bottom:2rem;padding-left:calc(1.6rem + 1.2rem);}
@@ -58,7 +55,6 @@
     .item-desc{font-size:.8rem;color:var(--smoke);margin-top:.3rem;line-height:1.5;font-weight:300;}
     .item-price{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--caramel);flex-shrink:0;white-space:nowrap;}
 
-    /* ── SPECIALS ── */
     .specials-banner{background:var(--espresso);color:var(--cream);padding:2.5rem 2rem;margin:4rem 0 0;border-radius:2px;position:relative;overflow:hidden;}
     .specials-banner::before{content:'IKKIS';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:7rem;font-weight:900;color:rgba(255,255,255,.04);pointer-events:none;white-space:nowrap;}
     .specials-banner h3{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;}
@@ -66,13 +62,11 @@
     .specials-banner p{font-size:.8rem;color:var(--light-smoke);font-weight:300;max-width:360px;line-height:1.6;}
     .specials-time{display:inline-block;margin-top:1rem;font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--caramel);border:1px solid rgba(196,125,62,.4);padding:.3rem .8rem;}
 
-    /* ── ALLERGEN ── */
     .allergen-bar{background:rgba(196,125,62,.08);border-left:3px solid var(--caramel);padding:.9rem 1.2rem;margin:3rem 0 0;font-size:.73rem;color:var(--smoke);line-height:1.6;}
     .allergen-bar strong{color:var(--espresso);}
     .legend{display:flex;gap:1rem;flex-wrap:wrap;padding:1.2rem 0 0;font-size:.68rem;color:var(--smoke);align-items:center;}
     .legend-item{display:flex;align-items:center;gap:.3rem;}
 
-    /* ── FOOTER ── */
     .footer{background:var(--espresso);color:var(--cream);text-align:center;padding:3rem 2rem;}
     .footer-logo{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;margin-bottom:.5rem;}
     .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--smoke);font-size:.9rem;margin-bottom:1.5rem;}
@@ -80,36 +74,49 @@
     .footer-divider{width:40px;height:1px;background:rgba(196,125,62,.4);margin:1.5rem auto;}
     .footer-note{font-size:.6rem;color:var(--smoke);letter-spacing:.1em;}
 
-    /* ── EDIT MODE HIGHLIGHTS ── */
+    .float-text{position:absolute;padding:1rem 1.4rem;background:rgba(250,247,242,.92);border:1px solid rgba(196,125,62,.2);border-radius:3px;box-shadow:0 2px 12px rgba(26,15,7,.08);z-index:50;max-width:280px;font-size:.82rem;line-height:1.6;color:var(--espresso);}
+
+    /* ── EDIT MODE ── */
     body.edit-on .menu-item{cursor:pointer;}
     body.edit-on .menu-item:hover{background:rgba(196,125,62,.07);outline:1.5px dashed rgba(196,125,62,.45);outline-offset:3px;padding-left:.6rem;padding-right:.6rem;}
     body.edit-on .menu-item::after{content:'✏️';position:absolute;top:.6rem;right:.6rem;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none;}
     body.edit-on .menu-item:hover::after{opacity:1;}
-    body.edit-on .editable-text{cursor:pointer;border-bottom:1px dashed rgba(196,125,62,.5);transition:border-color .2s;}
+    body.edit-on .editable-text{border-bottom:1px dashed rgba(196,125,62,.5);transition:border-color .2s;cursor:pointer;}
     body.edit-on .editable-text:hover{border-color:var(--caramel);}
-    .add-item-btn{display:none;width:100%;margin-top:1rem;padding:.85rem;border:1.5px dashed rgba(196,125,62,.35);background:transparent;color:var(--caramel);font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s;}
-    .add-item-btn:hover{background:rgba(196,125,62,.06);border-color:var(--caramel);}
-    body.edit-on .add-item-btn{display:block;}
+    body.edit-on .section-header{cursor:pointer;padding:.3rem;margin-left:-.3rem;margin-right:-.3rem;border-radius:3px;transition:background .2s;}
+    body.edit-on .section-header:hover{background:rgba(196,125,62,.08);}
+    body.edit-on .section-desc{cursor:pointer;padding:.3rem .6rem;margin-left:calc(1.6rem + .6rem);border-radius:3px;transition:background .2s;}
+    body.edit-on .section-desc:hover{background:rgba(196,125,62,.08);}
+    body.edit-on .float-text{cursor:move;border:1.5px dashed var(--caramel);}
+    body.edit-on .float-text:hover{background:rgba(196,125,62,.08);}
+    .add-item-btn,.add-section-btn{display:none;width:100%;margin-top:1rem;padding:.85rem;border:1.5px dashed rgba(196,125,62,.35);background:transparent;color:var(--caramel);font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s;}
+    .add-item-btn:hover,.add-section-btn:hover{background:rgba(196,125,62,.06);border-color:var(--caramel);}
+    body.edit-on .add-item-btn,body.edit-on .add-section-btn{display:block;}
+    .section-edit-icon{display:none;position:absolute;top:.3rem;right:.3rem;font-size:.85rem;opacity:.6;}
+    body.edit-on .section-header:hover .section-edit-icon{display:inline;}
+    .float-delete{position:absolute;top:.3rem;right:.3rem;background:var(--espresso);color:var(--cream);border:none;width:20px;height:20px;border-radius:50%;font-size:.65rem;cursor:pointer;display:none;line-height:20px;text-align:center;padding:0;opacity:.7;transition:opacity .2s;}
+    .float-delete:hover{opacity:1;}
+    body.edit-on .float-text:hover .float-delete{display:block;}
 
     /* ── FAB ── */
     #editFab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;background:var(--espresso);color:var(--cream);border:none;border-radius:50px;padding:.75rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 20px rgba(26,15,7,.35);display:flex;align-items:center;gap:.5rem;transition:all .25s;}
     #editFab:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(196,125,62,.4);}
     #editFab.active{background:var(--caramel);}
-    #exportBar{display:none;position:fixed;bottom:5rem;right:1.5rem;z-index:9998;display:flex;flex-direction:column;gap:.4rem;}
-    body.edit-on #exportBar{display:flex;}
-    #exportBar button{background:white;border:1px solid rgba(138,125,114,.3);color:var(--smoke);font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1rem;cursor:pointer;border-radius:2px;box-shadow:0 2px 12px rgba(26,15,7,.1);transition:all .2s;white-space:nowrap;}
-    #exportBar button:hover{border-color:var(--caramel);color:var(--caramel);}
+    /* ── Edit tools: hidden by default, shown via JS ── */
+    #editTools{position:fixed;bottom:5rem;right:1.5rem;z-index:9998;flex-direction:column;gap:.4rem;display:none;}
+    #editTools button{background:white;border:1px solid rgba(138,125,114,.3);color:var(--smoke);font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1rem;cursor:pointer;border-radius:2px;box-shadow:0 2px 12px rgba(26,15,7,.1);transition:all .2s;white-space:nowrap;}
+    #editTools button:hover{border-color:var(--caramel);color:var(--caramel);}
 
-    /* ── MODALS (shared base) ── */
+    /* ── MODALS ── */
     .overlay{position:fixed;inset:0;z-index:10000;background:rgba(26,15,7,.65);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .25s;}
     .overlay.open{opacity:1;pointer-events:all;}
-    .modal-box{background:var(--warm-white);border-radius:4px;padding:2rem;width:100%;max-width:460px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(26,15,7,.3);transform:translateY(16px);transition:transform .25s;}
+    .modal-box{background:var(--warm-white);border-radius:4px;padding:2rem;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(26,15,7,.3);transform:translateY(16px);transition:transform .25s;}
     .overlay.open .modal-box{transform:translateY(0);}
-    .modal-box h2{font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:1.4rem;color:var(--espresso);}
+    .modal-box h2{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:1.4rem;color:var(--espresso);}
     .modal-box label{display:block;font-size:.67rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--smoke);margin-bottom:.35rem;margin-top:1rem;}
     .modal-box label:first-of-type{margin-top:0;}
-    .modal-box input,.modal-box textarea{width:100%;border:1px solid rgba(138,125,114,.3);border-radius:2px;padding:.6rem .8rem;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--espresso);background:white;outline:none;transition:border-color .2s;}
-    .modal-box input:focus,.modal-box textarea:focus{border-color:var(--caramel);}
+    .modal-box input,.modal-box textarea,.modal-box select{width:100%;border:1px solid rgba(138,125,114,.3);border-radius:2px;padding:.6rem .8rem;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--espresso);background:white;outline:none;transition:border-color .2s;}
+    .modal-box input:focus,.modal-box textarea:focus,.modal-box select:focus{border-color:var(--caramel);}
     .modal-box textarea{resize:vertical;min-height:68px;}
     .modal-actions{display:flex;gap:.8rem;margin-top:1.8rem;justify-content:flex-end;align-items:center;}
     .btn-primary{background:var(--espresso);color:var(--cream);border:none;padding:.65rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .2s;}
@@ -118,25 +125,16 @@
     .btn-ghost:hover{border-color:var(--smoke);}
     .btn-danger{background:transparent;color:#b94a48;border:1px solid rgba(185,74,72,.25);padding:.65rem 1rem;font-family:'DM Sans',sans-serif;font-size:.78rem;cursor:pointer;border-radius:2px;margin-right:auto;transition:all .2s;}
     .btn-danger:hover{background:rgba(185,74,72,.08);}
-    .field-error{font-size:.72rem;color:#b94a48;margin-top:.3rem;display:none;}
-
-    /* emoji picker */
     .emoji-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem;}
     .e-pick{font-size:1.25rem;cursor:pointer;padding:.3rem;border-radius:4px;border:1px solid transparent;transition:all .15s;user-select:none;}
     .e-pick:hover,.e-pick.sel{border-color:var(--caramel);background:rgba(196,125,62,.1);}
     .tag-checks{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.4rem;}
     .tag-check{display:flex;align-items:center;gap:.3rem;font-size:.75rem;color:var(--smoke);cursor:pointer;}
     .tag-check input{accent-color:var(--caramel);}
-
-    /* password modal extras */
     .pw-hint{font-size:.75rem;color:var(--smoke);margin-top:.8rem;line-height:1.5;}
     .pw-error{font-size:.75rem;color:#b94a48;margin-top:.5rem;min-height:1.1em;}
-    .pw-link{display:inline-block;margin-top:1.2rem;font-size:.72rem;color:var(--caramel);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
-
-    /* section divider in settings */
     .modal-sep{height:1px;background:rgba(138,125,114,.2);margin:1.4rem 0 .4rem;}
 
-    /* toast */
     #toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(60px);background:var(--espresso);color:var(--cream);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.4rem;border-radius:2px;z-index:99999;transition:transform .3s ease;pointer-events:none;white-space:nowrap;}
     #toast.show{transform:translateX(-50%) translateY(0);}
 
@@ -151,39 +149,32 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
-  <div class="hero-badge" id="heroBadge">Est. 2021 · Kolkata</div>
+  <div class="hero-badge editable-text" id="heroBadge">EST. 2021 · KOLKATA</div>
   <h1 class="hero-title">
     Ikkis
-    <span class="hero-subtitle" id="heroSubtitle">café &amp; kitchen</span>
+    <span class="hero-subtitle editable-text" id="heroSubtitle">café &amp; kitchen</span>
   </h1>
   <div class="hero-divider"></div>
   <p class="hero-tagline editable-text" id="heroTagline">Where every cup tells a story</p>
   <div class="hero-scroll">
-    <span class="hero-scroll-label">Scroll</span>
+    <span class="hero-scroll-label editable-text" id="heroScrollLabel">SCROLL</span>
     <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- ══ STICKY NAV ══ -->
-<nav class="category-nav" id="catNav">
-  <button class="cat-btn active" onclick="navTo('coffee')">☕ Coffee</button>
-  <button class="cat-btn" onclick="navTo('cold')">🧊 Cold Drinks</button>
-  <button class="cat-btn" onclick="navTo('tea')">🍵 Tea &amp; Infusions</button>
-  <button class="cat-btn" onclick="navTo('food')">🍳 All-Day Bites</button>
-  <button class="cat-btn" onclick="navTo('desserts')">🍰 Desserts</button>
-  <button class="cat-btn" onclick="navTo('smoothies')">🥤 Smoothies</button>
-</nav>
+<!-- ══ NAV ══ -->
+<nav class="category-nav" id="catNav"></nav>
 
-<!-- ══ MENU (JS-rendered) ══ -->
+<!-- ══ MENU ══ -->
 <div class="menu-wrapper" id="menuWrapper"></div>
 
 <!-- ══ SPECIALS ══ -->
 <div class="menu-wrapper" style="padding-bottom:0">
   <div class="specials-banner">
-    <h3 class="editable-text" id="specialsLabel" onclick="editText('specialsLabel')">Today's Special</h3>
-    <h2 class="editable-text" id="specialsTitle" onclick="editText('specialsTitle')">Chef's Table · Weekend Brunch</h2>
-    <p class="editable-text" id="specialsBody" onclick="editText('specialsBody')">Saturday &amp; Sunday, 9 AM – 1 PM. A curated spread: eggs any style, artisan bread, seasonal fruits &amp; bottomless filter coffee.</p>
-    <span class="specials-time editable-text" id="specialsTime" onclick="editText('specialsTime')">Sat &amp; Sun · 9:00 – 13:00</span>
+    <h3 class="editable-text" id="specialsLabel">Today's Special</h3>
+    <h2 class="editable-text" id="specialsTitle">Chef's Table · Weekend Brunch</h2>
+    <p class="editable-text" id="specialsBody">Saturday &amp; Sunday, 9 AM – 1 PM. A curated spread: eggs any style, artisan bread, seasonal fruits &amp; bottomless filter coffee.</p>
+    <span class="specials-time editable-text" id="specialsTime">Sat &amp; Sun · 9:00 – 13:00</span>
   </div>
   <div class="allergen-bar">
     <strong>Allergen &amp; Dietary Info</strong> — Please inform our staff of any allergies or dietary requirements before ordering. All our food may contain traces of nuts, gluten, dairy &amp; eggs. Prices are inclusive of taxes.
@@ -199,14 +190,14 @@
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="footer-logo">Ikkis</div>
-  <div class="footer-tagline editable-text" id="footerTagline" onclick="editText('footerTagline')">café &amp; kitchen · est. 2021</div>
+  <div class="footer-tagline editable-text" id="footerTagline">café &amp; kitchen · est. 2021</div>
   <div class="footer-info">
-    <span class="editable-text" id="footerAddress" onclick="editText('footerAddress')">21 Park Street, Kolkata – 700 016</span><br>
-    <span class="editable-text" id="footerHours" onclick="editText('footerHours')">Open daily · 8:00 AM – 11:00 PM</span><br>
-    <span class="editable-text" id="footerContact" onclick="editText('footerContact')">+91 98300 12345 · hello@ikkiscafe.in</span>
+    <span class="editable-text" id="footerAddress">21 Park Street, Kolkata – 700 016</span><br>
+    <span class="editable-text" id="footerHours">Open daily · 8:00 AM – 11:00 PM</span><br>
+    <span class="editable-text" id="footerContact">+91 98300 12345 · hello@ikkiscafe.in</span>
   </div>
   <div class="footer-divider"></div>
-  <div class="footer-note editable-text" id="footerNote" onclick="editText('footerNote')">Scan this QR to share our menu · Prices subject to change · © 2025 Ikkis</div>
+  <div class="footer-note editable-text" id="footerNote">Scan this QR to share our menu · Prices subject to change · © 2025 Ikkis</div>
 </footer>
 
 <!-- ══ FAB ══ -->
@@ -214,7 +205,9 @@
   <span id="fabIcon">🔒</span>
   <span id="fabLabel">Staff Login</span>
 </button>
-<div id="exportBar" style="display:none">
+<div id="editTools">
+  <button onclick="addFloatText()">+ Add Text Block</button>
+  <button onclick="addSection()">+ Add Menu Section</button>
   <button onclick="exportData()">⬇ Export Backup</button>
   <button onclick="openSettings()">⚙ Settings</button>
 </div>
@@ -223,12 +216,12 @@
 <div class="overlay" id="pwOverlay">
   <div class="modal-box">
     <h2>Staff Access</h2>
-    <p class="pw-hint">Enter the staff password to unlock menu editing.</p>
+    <p class="pw-hint">Enter the staff password to unlock editing.</p>
     <label style="margin-top:1rem">Password</label>
-    <input type="password" id="pwInput" placeholder="Enter password…" onkeydown="if(event.key==='Enter')checkPw()"/>
+    <input type="password" id="pwInput" placeholder="••••••••"/>
     <div class="pw-error" id="pwError"></div>
     <div class="modal-actions">
-      <button class="btn-ghost" onclick="closeOverlay('pwOverlay')">Cancel</button>
+      <button class="btn-ghost" onclick="closeOv('pwOverlay')">Cancel</button>
       <button class="btn-primary" onclick="checkPw()">Unlock</button>
     </div>
   </div>
@@ -238,25 +231,20 @@
 <div class="overlay" id="settingsOverlay">
   <div class="modal-box">
     <h2>⚙ Settings</h2>
-
     <label>Change Password</label>
-    <input type="password" id="sCurPw" placeholder="Current password"/>
-    <input type="password" id="sNewPw" placeholder="New password" style="margin-top:.5rem"/>
-    <input type="password" id="sNewPw2" placeholder="Confirm new password" style="margin-top:.5rem"/>
-    <div class="pw-error" id="sError"></div>
-    <div style="margin-top:1rem">
-      <button class="btn-primary" onclick="changePassword()" style="width:100%">Update Password</button>
-    </div>
-
+    <input type="password" id="sCur" placeholder="Current password"/>
+    <input type="password" id="sNew" placeholder="New password" style="margin-top:.5rem"/>
+    <input type="password" id="sNew2" placeholder="Confirm new password" style="margin-top:.5rem"/>
+    <div class="pw-error" id="sErr"></div>
+    <div style="margin-top:1rem"><button class="btn-primary" onclick="changePw()" style="width:100%">Update Password</button></div>
     <div class="modal-sep"></div>
     <p style="font-size:.75rem;color:var(--smoke);line-height:1.6">
       <strong style="color:var(--espresso)">Ownership Transfer</strong><br>
-      Set a new password above and share it with the new owner. Once they log in with the new password, they have full control and can change it again anytime.
+      Set a new password above and share it with the new owner. They'll have full control and can change it again.
     </p>
-
     <div class="modal-sep"></div>
     <div class="modal-actions" style="margin-top:.5rem">
-      <button class="btn-ghost" onclick="closeOverlay('settingsOverlay')">Close</button>
+      <button class="btn-ghost" onclick="closeOv('settingsOverlay')">Close</button>
     </div>
   </div>
 </div>
@@ -264,16 +252,16 @@
 <!-- ══ ITEM EDIT MODAL ══ -->
 <div class="overlay" id="itemOverlay">
   <div class="modal-box">
-    <h2 id="itemModalTitle">Edit Item</h2>
-    <label>Emoji / Icon</label>
+    <h2 id="itemTitle">Edit Item</h2>
+    <label>Emoji</label>
     <div class="emoji-row" id="emojiPicker"></div>
-    <input id="eEmoji" placeholder="Or paste any emoji…" style="margin-top:.5rem" maxlength="4"/>
-    <label>Item Name</label>
+    <input id="eEmoji" placeholder="Or paste emoji…" style="margin-top:.5rem" maxlength="4"/>
+    <label>Name</label>
     <input id="eName" placeholder="e.g. Caramel Macchiato"/>
     <label>Description</label>
-    <textarea id="eDesc" placeholder="Short, appetising description…"></textarea>
+    <textarea id="eDesc"></textarea>
     <label>Price (₹)</label>
-    <input id="ePrice" type="number" placeholder="e.g. 180"/>
+    <input id="ePrice" type="number" placeholder="180"/>
     <label>Tags</label>
     <div class="tag-checks">
       <label class="tag-check"><input type="checkbox" id="tV"> Vegetarian</label>
@@ -283,7 +271,7 @@
     </div>
     <div class="modal-actions">
       <button class="btn-danger" id="btnDel" onclick="deleteItem()">🗑 Delete</button>
-      <button class="btn-ghost" onclick="closeOverlay('itemOverlay')">Cancel</button>
+      <button class="btn-ghost" onclick="closeOv('itemOverlay')">Cancel</button>
       <button class="btn-primary" onclick="saveItem()">Save</button>
     </div>
   </div>
@@ -292,12 +280,51 @@
 <!-- ══ TEXT EDIT MODAL ══ -->
 <div class="overlay" id="textOverlay">
   <div class="modal-box">
-    <h2 id="textModalTitle">Edit Text</h2>
-    <label id="textModalLabel">Content</label>
-    <textarea id="textInput" rows="3"></textarea>
+    <h2 id="txtTitle">Edit Text</h2>
+    <label id="txtLabel">Content</label>
+    <textarea id="txtInput" rows="3"></textarea>
     <div class="modal-actions">
-      <button class="btn-ghost" onclick="closeOverlay('textOverlay')">Cancel</button>
-      <button class="btn-primary" onclick="saveText()">Save</button>
+      <button class="btn-ghost" onclick="closeOv('textOverlay')">Cancel</button>
+      <button class="btn-primary" onclick="saveTxt()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION EDIT MODAL ══ -->
+<div class="overlay" id="sectionOverlay">
+  <div class="modal-box">
+    <h2 id="secTitle">Edit Section</h2>
+    <label>Icon Emoji</label>
+    <input id="secIcon" placeholder="e.g. ☕" maxlength="4"/>
+    <label>Section Title</label>
+    <input id="secName" placeholder="e.g. Coffee"/>
+    <label>Description</label>
+    <textarea id="secDesc" placeholder="e.g. Single-origin beans, roasted slow & pulled with care"></textarea>
+    <div class="modal-actions">
+      <button class="btn-danger" id="btnDelSec" onclick="deleteSec()">🗑 Delete Section</button>
+      <button class="btn-ghost" onclick="closeOv('sectionOverlay')">Cancel</button>
+      <button class="btn-primary" onclick="saveSec()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FLOAT TEXT MODAL ══ -->
+<div class="overlay" id="floatOverlay">
+  <div class="modal-box">
+    <h2>Floating Text Block</h2>
+    <label>Content</label>
+    <textarea id="floatTxt" rows="4" placeholder="e.g. 🎉 Happy hour: 4–6 PM daily!"></textarea>
+    <label>Position</label>
+    <select id="floatPos">
+      <option value="top-left">Top Left</option>
+      <option value="top-right">Top Right</option>
+      <option value="bottom-left">Bottom Left</option>
+      <option value="bottom-right">Bottom Right</option>
+      <option value="center">Center</option>
+    </select>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeOv('floatOverlay')">Cancel</button>
+      <button class="btn-primary" onclick="saveFloat()">Add</button>
     </div>
   </div>
 </div>
@@ -306,60 +333,64 @@
 
 <script>
 // ══════════════════════════════════════════
-//  DATA & DEFAULTS
+//  CONSTANTS & DEFAULTS
 // ══════════════════════════════════════════
 const DEFAULT_PW = 'ikkis2021';
+const EMOJIS = ['☕','🍫','🥛','🤍','🖤','☁️','🌿','🧡','🫖','🫧','🧊','🍋','🍵','🍓','🌸','🍮','🥐','🥪','🍳','🍝','🍟','🥗','🍦','🥭','🍌','🥬','🥃','🍰','🍩','🥤','🍶','🫗','🥙','🧁','🍪','🍺','🍷','🍸','🍹','🧃'];
 
 const DEFAULT_MENU = {
   coffee:{title:'Coffee',icon:'☕',desc:'Single-origin beans, roasted slow & pulled with care',items:[
     {id:'c1',emoji:'🖤',name:'Espresso',desc:'Concentrated, bold & unapologetic. Single or double shot.',price:120,tags:['v']},
     {id:'c2',emoji:'☁️',name:'Cappuccino',desc:'Velvety microfoam, equal parts espresso, steamed milk & froth.',price:160,tags:['pop']},
-    {id:'c3',emoji:'🤍',name:'Flat White',desc:'Ristretto-based, silky & stronger than a latte. A purist\'s pick.',price:175,tags:[]},
+    {id:'c3',emoji:'🤍',name:'Flat White',desc:'Ristretto-based, silky & stronger than a latte.',price:175,tags:[]},
     {id:'c4',emoji:'🥛',name:'Café Latte',desc:'Smooth, mellow — espresso cushioned in warm steamed milk.',price:165,tags:[]},
     {id:'c5',emoji:'🍫',name:'Mocha',desc:'Espresso + dark chocolate + steamed milk. Topped with cocoa dust.',price:185,tags:['pop']},
-    {id:'c6',emoji:'🌿',name:'Ikkis Signature Brew',desc:'Cold brew espresso, coconut milk, cardamom & a hint of jaggery.',price:220,tags:['new']},
+    {id:'c6',emoji:'🌿',name:'Ikkis Signature Brew',desc:'Cold brew espresso, coconut milk, cardamom & jaggery.',price:220,tags:['new']},
     {id:'c7',emoji:'🫖',name:'Americano',desc:'Espresso extended with hot water. Clean, honest, no-frills.',price:140,tags:[]},
     {id:'c8',emoji:'🧡',name:'Caramel Macchiato',desc:'Vanilla-sweetened steamed milk, espresso poured over, drizzled with caramel.',price:195,tags:[]},
     {id:'c9',emoji:'🫧',name:'Filter Coffee',desc:'South Indian decoction, full-cream milk, served in a traditional tumbler-davara.',price:130,tags:['v']},
   ]},
   cold:{title:'Cold Drinks',icon:'🧊',desc:'Chilled, refreshed & ready for a Kolkata afternoon',items:[
-    {id:'d1',emoji:'🥃',name:'Cold Brew',desc:'12-hour steeped, smooth & low-acid. Served over ice, black or with milk.',price:200,tags:['pop']},
+    {id:'d1',emoji:'🥃',name:'Cold Brew',desc:'12-hour steeped, smooth & low-acid. Served over ice.',price:200,tags:['pop']},
     {id:'d2',emoji:'☕',name:'Iced Latte',desc:'Double shot espresso poured over ice and chilled milk.',price:175,tags:[]},
-    {id:'d3',emoji:'🍋',name:'Sparkling Lemonade',desc:'Fresh Kagzi lemon, soda, mint, a pinch of black salt & sugar syrup.',price:150,tags:['v']},
+    {id:'d3',emoji:'🍋',name:'Sparkling Lemonade',desc:'Fresh Kagzi lemon, soda, mint & black salt.',price:150,tags:['v']},
     {id:'d4',emoji:'🍵',name:'Iced Matcha Latte',desc:'Ceremonial-grade matcha whisked with oat milk and poured over ice.',price:210,tags:['new','v']},
     {id:'d5',emoji:'🍓',name:'Berry Cooler',desc:'Strawberry & blueberry blended with rose water, topped with soda.',price:170,tags:['v']},
   ]},
   tea:{title:'Tea & Infusions',icon:'🍵',desc:'Slow-steeped leaves from Darjeeling & Assam',items:[
     {id:'t1',emoji:'🫖',name:'Masala Chai',desc:'Ginger, cardamom, black pepper, cinnamon & Assam CTC.',price:110,tags:['pop','v']},
     {id:'t2',emoji:'🌸',name:'Rose Kashmiri Kahwa',desc:'Green tea, saffron, cinnamon, almonds, rose petals.',price:160,tags:['v']},
-    {id:'t3',emoji:'🍋',name:'Lemon Ginger Honey',desc:'Black tea base, fresh ginger, lemon wedge & raw Sundarbans honey.',price:130,tags:['v']},
-    {id:'t4',emoji:'🌿',name:'Darjeeling First Flush',desc:'Delicate, floral & golden. Finest spring harvest from the Himalayan foothills.',price:180,tags:['s']},
+    {id:'t3',emoji:'🍋',name:'Lemon Ginger Honey',desc:'Black tea base, fresh ginger, lemon wedge & raw honey.',price:130,tags:['v']},
+    {id:'t4',emoji:'🌿',name:'Darjeeling First Flush',desc:'Delicate, floral & golden. Finest spring harvest.',price:180,tags:['s']},
   ]},
   food:{title:'All-Day Bites',icon:'🍳',desc:'Kitchen runs 8 AM – 10 PM · Last order 9:30 PM',items:[
-    {id:'f1',emoji:'🥐',name:'Butter Croissant',desc:'Laminated, flaky & fresh-baked every morning. Served warm with house jam.',price:140,tags:['v']},
-    {id:'f2',emoji:'🥪',name:'Ikkis Club Sandwich',desc:'Triple-decker — smoked chicken, cheddar, lettuce, tomato & chipotle mayo on toasted sourdough.',price:280,tags:['pop']},
-    {id:'f3',emoji:'🍳',name:'Eggs Benedict',desc:'Poached eggs, sautéed spinach, toasted English muffin & house hollandaise.',price:320,tags:['s']},
-    {id:'f4',emoji:'🫓',name:'Avocado Toast',desc:'Smashed avo on sourdough, chilli flakes, microgreens, lemon zest & EVOO.',price:260,tags:['v']},
+    {id:'f1',emoji:'🥐',name:'Butter Croissant',desc:'Laminated, flaky & fresh-baked. Served warm with house jam.',price:140,tags:['v']},
+    {id:'f2',emoji:'🥪',name:'Ikkis Club Sandwich',desc:'Triple-decker — smoked chicken, cheddar, lettuce, tomato & chipotle mayo.',price:280,tags:['pop']},
+    {id:'f3',emoji:'🍳',name:'Eggs Benedict',desc:'Poached eggs, sautéed spinach, toasted English muffin & hollandaise.',price:320,tags:['s']},
+    {id:'f4',emoji:'🫓',name:'Avocado Toast',desc:'Smashed avo on sourdough, chilli flakes, microgreens, lemon zest.',price:260,tags:['v']},
     {id:'f5',emoji:'🍝',name:'Truffle Pasta',desc:'Pappardelle tossed in truffle cream, parmigiano & crispy shallots.',price:380,tags:['s','v']},
-    {id:'f6',emoji:'🍟',name:'Loaded Fries',desc:'Crispy fries topped with nacho cheese, jalapeño, pickled onions & sriracha aioli.',price:220,tags:['v']},
-    {id:'f7',emoji:'🥗',name:'Garden Grain Bowl',desc:'Quinoa, roasted vegetables, hummus, pomegranate & tahini lemon dressing.',price:290,tags:['v','new']},
+    {id:'f6',emoji:'🍟',name:'Loaded Fries',desc:'Crispy fries topped with nacho cheese, jalapeño & sriracha aioli.',price:220,tags:['v']},
+    {id:'f7',emoji:'🥗',name:'Garden Grain Bowl',desc:'Quinoa, roasted vegetables, hummus, pomegranate & tahini dressing.',price:290,tags:['v','new']},
   ]},
   desserts:{title:'Desserts',icon:'🍰',desc:'Handcrafted in-house — worth saving room for',items:[
-    {id:'ds1',emoji:'🍮',name:'Burnt Basque Cheesecake',desc:'Creamy centre, caramelised top. Served with seasonal berry compote.',price:220,tags:['pop']},
-    {id:'ds2',emoji:'🍫',name:'Dark Chocolate Fondant',desc:'70% dark chocolate, molten centre. Paired with vanilla bean ice cream.',price:240,tags:['s']},
-    {id:'ds3',emoji:'🍦',name:'Affogato',desc:'Two scoops of vanilla gelato drowned in a double shot of hot espresso.',price:180,tags:[]},
+    {id:'ds1',emoji:'🍮',name:'Burnt Basque Cheesecake',desc:'Creamy centre, caramelised top. Served with berry compote.',price:220,tags:['pop']},
+    {id:'ds2',emoji:'🍫',name:'Dark Chocolate Fondant',desc:'70% dark chocolate, molten centre. Paired with vanilla ice cream.',price:240,tags:['s']},
+    {id:'ds3',emoji:'🍦',name:'Affogato',desc:'Two scoops of vanilla gelato drowned in hot espresso.',price:180,tags:[]},
     {id:'ds4',emoji:'🥭',name:'Mango Panna Cotta',desc:'Silky vanilla cream, Alphonso mango coulis, toasted coconut.',price:195,tags:['new','v']},
   ]},
   smoothies:{title:'Smoothies',icon:'🥤',desc:'Blended fresh to order — no concentrates, no shortcuts',items:[
     {id:'sm1',emoji:'🍌',name:'Peanut Butter Banana',desc:'Frozen banana, almond milk, peanut butter, cacao nibs & honey.',price:210,tags:['pop','v']},
     {id:'sm2',emoji:'🥬',name:'Green Detox',desc:'Spinach, cucumber, apple, ginger, lemon & coconut water.',price:200,tags:['v']},
-    {id:'sm3',emoji:'🍓',name:'Strawberry Acai',desc:'Acai base, frozen strawberries, oat milk & a squeeze of lime.',price:220,tags:['v']},
+    {id:'sm3',emoji:'🍓',name:'Strawberry Acai',desc:'Acai base, frozen strawberries, oat milk & lime.',price:220,tags:['v']},
     {id:'sm4',emoji:'🥭',name:'Mango Lassi Smoothie',desc:'Alphonso mango, thick yoghurt, cardamom, saffron & rose water.',price:190,tags:['v']},
   ]}
 };
 
 const DEFAULT_TEXTS = {
+  heroBadge:'EST. 2021 · KOLKATA',
+  heroSubtitle:'café & kitchen',
   heroTagline:'Where every cup tells a story',
+  heroScrollLabel:'SCROLL',
   specialsLabel:"Today's Special",
   specialsTitle:"Chef's Table · Weekend Brunch",
   specialsBody:'Saturday & Sunday, 9 AM – 1 PM. A curated spread: eggs any style, artisan bread, seasonal fruits & bottomless filter coffee.',
@@ -371,54 +402,91 @@ const DEFAULT_TEXTS = {
   footerNote:'Scan this QR to share our menu · Prices subject to change · © 2025 Ikkis'
 };
 
-const ORDER = ['coffee','cold','tea','food','desserts','smoothies'];
-const EMOJIS = ['☕','🍫','🥛','🤍','🖤','☁️','🌿','🧡','🫖','🫧','🧊','🍋','🍵','🍓','🌸','🍮','🥐','🥪','🍳','🍝','🍟','🥗','🍦','🥭','🍌','🥬','🥃','🍰','🍩','🥤','🍶','🫗'];
-
-// ══ STATE ══
+// ══════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════
 let menuData  = JSON.parse(localStorage.getItem('ikkis_menu')  || 'null') || JSON.parse(JSON.stringify(DEFAULT_MENU));
 let textData  = JSON.parse(localStorage.getItem('ikkis_texts') || 'null') || JSON.parse(JSON.stringify(DEFAULT_TEXTS));
+let floats    = JSON.parse(localStorage.getItem('ikkis_floats') || '[]');
 let staffPw   = localStorage.getItem('ikkis_pw') || DEFAULT_PW;
+let order     = Object.keys(menuData);
 let editMode  = false;
-let curItem   = null;   // {key, idx}
+
+// Item modal state
+let curItem   = null;
 let isNewItem = false;
-let curTextId = null;
+
+// Text modal state — txtMode: 'field' | 'section_desc'
+let txtMode   = 'field';
+let curTxtId  = null;
+let curSecKey = null;
+
+// Section modal state
+let isNewSec  = false;
 
 // ══════════════════════════════════════════
-//  RENDER MENU
+//  RENDER
 // ══════════════════════════════════════════
 function render() {
   const wrap = document.getElementById('menuWrapper');
   wrap.innerHTML = '';
-  ORDER.forEach(key => {
+
+  order.forEach(key => {
     const sec = menuData[key];
-    const el = document.createElement('section');
-    el.className = 'menu-section'; el.id = key;
+    const el  = document.createElement('section');
+    el.className = 'menu-section';
+    el.id = key;
     el.innerHTML = `
-      <div class="section-header">
+      <div class="section-header" onclick="editSec('${key}')">
         <span class="section-icon">${sec.icon}</span>
         <h2 class="section-title">${sec.title}</h2>
+        <span class="section-edit-icon">✏️</span>
       </div>
-      <p class="section-desc">${sec.desc}</p>
+      <p class="section-desc" onclick="editSecDesc('${key}')">${sec.desc}</p>
       <div class="section-line"></div>
       <div class="menu-grid" id="g-${key}"></div>
       <button class="add-item-btn" onclick="openNew('${key}')">+ Add item to ${sec.title}</button>`;
     wrap.appendChild(el);
+
     const grid = el.querySelector(`#g-${key}`);
     sec.items.forEach((item, i) => grid.appendChild(makeItemEl(item, key, i)));
   });
+
+  // Bottom "add section" button inside menu wrapper
+  const addSecBtn = document.createElement('button');
+  addSecBtn.className = 'add-section-btn';
+  addSecBtn.textContent = '+ Add Menu Section';
+  addSecBtn.onclick = addSection;
+  wrap.appendChild(addSecBtn);
+
+  renderNav();
   applyTexts();
+  renderFloats();
   fadeIn();
+}
+
+function renderNav() {
+  const nav = document.getElementById('catNav');
+  nav.innerHTML = '';
+  order.forEach(key => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn';
+    btn.textContent = `${menuData[key].icon} ${menuData[key].title}`;
+    btn.onclick = () => navTo(key);
+    nav.appendChild(btn);
+  });
+  if (nav.children.length) nav.children[0].classList.add('active');
 }
 
 function makeItemEl(item, key, idx) {
   const d = document.createElement('div');
   d.className = 'menu-item';
   d.onclick = () => { if (editMode) openEditItem(key, idx); };
-  const tags = (item.tags||[]).map(t =>
-    t==='v'   ? `<span class="tag tag-v">V</span>` :
-    t==='new' ? `<span class="tag tag-new">New</span>` :
-    t==='pop' ? `<span class="tag tag-pop">★ Popular</span>` :
-    t==='s'   ? `<span class="tag tag-s">Chef's Pick</span>` : ''
+  const tags = (item.tags || []).map(t =>
+    t === 'v'   ? `<span class="tag tag-v">V</span>` :
+    t === 'new' ? `<span class="tag tag-new">New</span>` :
+    t === 'pop' ? `<span class="tag tag-pop">★ Popular</span>` :
+    t === 's'   ? `<span class="tag tag-s">Chef's Pick</span>` : ''
   ).join('');
   d.innerHTML = `
     <span class="item-emoji">${item.emoji}</span>
@@ -443,118 +511,132 @@ function applyTexts() {
     const el = document.getElementById(id);
     if (el) el.textContent = textData[id];
   });
-  // wire up editable-text onclick only in edit mode
   document.querySelectorAll('.editable-text').forEach(el => {
-    el.onclick = editMode ? () => editText(el.id) : null;
+    el.onclick = editMode ? () => openTxtField(el.id) : null;
   });
 }
 
-function editText(id) {
+// Open text modal for a simple textData field
+function openTxtField(id) {
   if (!editMode) return;
-  curTextId = id;
+  txtMode  = 'field';
+  curTxtId = id;
   const labels = {
-    heroTagline:'Hero Tagline',
-    specialsLabel:'Specials Label',
-    specialsTitle:'Specials Title',
-    specialsBody:'Specials Description',
-    specialsTime:'Specials Time',
-    footerTagline:'Footer Tagline',
-    footerAddress:'Address',
-    footerHours:'Opening Hours',
-    footerContact:'Contact Info',
-    footerNote:'Footer Note'
+    heroBadge:'Hero Badge', heroSubtitle:'Hero Subtitle', heroTagline:'Hero Tagline',
+    heroScrollLabel:'Scroll Label', specialsLabel:'Specials Label', specialsTitle:'Specials Title',
+    specialsBody:'Specials Description', specialsTime:'Specials Time', footerTagline:'Footer Tagline',
+    footerAddress:'Address', footerHours:'Opening Hours', footerContact:'Contact', footerNote:'Footer Note'
   };
-  document.getElementById('textModalTitle').textContent = 'Edit: ' + (labels[id]||id);
-  document.getElementById('textModalLabel').textContent = labels[id]||'Content';
-  document.getElementById('textInput').value = textData[id] || '';
-  openOverlay('textOverlay');
+  document.getElementById('txtTitle').textContent = 'Edit: ' + (labels[id] || id);
+  document.getElementById('txtLabel').textContent = labels[id] || 'Content';
+  document.getElementById('txtInput').value = textData[id] || '';
+  openOv('textOverlay');
 }
 
-function saveText() {
-  if (!curTextId) return;
-  textData[curTextId] = document.getElementById('textInput').value.trim();
-  localStorage.setItem('ikkis_texts', JSON.stringify(textData));
-  applyTexts();
-  closeOverlay('textOverlay');
-  showToast('Text updated!');
+// Open text modal for a section description
+function editSecDesc(key) {
+  if (!editMode) return;
+  txtMode   = 'section_desc';
+  curSecKey = key;
+  document.getElementById('txtTitle').textContent = 'Edit Section Description';
+  document.getElementById('txtLabel').textContent = 'Description';
+  document.getElementById('txtInput').value = menuData[key].desc || '';
+  openOv('textOverlay');
 }
 
-// ══════════════════════════════════════════
-//  EDIT MODE
-// ══════════════════════════════════════════
-function fabClick() {
-  if (editMode) {
-    // lock
-    editMode = false;
-    document.body.classList.remove('edit-on');
-    document.getElementById('fabLabel').textContent = 'Staff Login';
-    document.getElementById('fabIcon').textContent  = '🔒';
-    document.getElementById('editFab').classList.remove('active');
-    document.getElementById('exportBar').style.display = 'none';
-    applyTexts();
-    showToast('Edit mode off');
+// ✅ FIXED: single clean saveTxt — no override hack
+function saveTxt() {
+  const val = document.getElementById('txtInput').value.trim();
+
+  if (txtMode === 'section_desc') {
+    // Saving a section description
+    menuData[curSecKey].desc = val;
+    saveMenuData();
+    closeOv('textOverlay');
+    render();
+    showToast('Description updated!');
   } else {
-    // show password prompt
-    document.getElementById('pwInput').value = '';
-    document.getElementById('pwError').textContent = '';
-    openOverlay('pwOverlay');
-    setTimeout(() => document.getElementById('pwInput').focus(), 300);
-  }
-}
-
-function checkPw() {
-  const val = document.getElementById('pwInput').value;
-  if (val === staffPw) {
-    closeOverlay('pwOverlay');
-    editMode = true;
-    document.body.classList.add('edit-on');
-    document.getElementById('fabLabel').textContent = 'Lock Editing';
-    document.getElementById('fabIcon').textContent  = '✅';
-    document.getElementById('editFab').classList.add('active');
-    document.getElementById('exportBar').style.display = 'flex';
+    // Saving a regular text field
+    if (!curTxtId) return;
+    textData[curTxtId] = val;
+    localStorage.setItem('ikkis_texts', JSON.stringify(textData));
     applyTexts();
-    showToast('Edit mode unlocked — tap anything to edit');
-  } else {
-    document.getElementById('pwError').textContent = 'Incorrect password. Try again.';
-    document.getElementById('pwInput').select();
+    closeOv('textOverlay');
+    showToast('Text updated!');
   }
 }
 
 // ══════════════════════════════════════════
-//  SETTINGS / PASSWORD CHANGE
+//  SECTIONS
 // ══════════════════════════════════════════
-function openSettings() { openOverlay('settingsOverlay'); }
+function editSec(key) {
+  if (!editMode) return;
+  isNewSec  = false;
+  curSecKey = key;
+  const sec = menuData[key];
+  document.getElementById('secTitle').textContent = 'Edit Section';
+  document.getElementById('btnDelSec').style.display = 'block';
+  document.getElementById('secIcon').value = sec.icon;
+  document.getElementById('secName').value = sec.title;
+  document.getElementById('secDesc').value = sec.desc;
+  openOv('sectionOverlay');
+}
 
-function changePassword() {
-  const cur  = document.getElementById('sCurPw').value;
-  const nw   = document.getElementById('sNewPw').value;
-  const nw2  = document.getElementById('sNewPw2').value;
-  const err  = document.getElementById('sError');
-  if (cur !== staffPw)  { err.textContent = 'Current password is incorrect.'; return; }
-  if (nw.length < 4)    { err.textContent = 'New password must be at least 4 characters.'; return; }
-  if (nw !== nw2)       { err.textContent = 'New passwords do not match.'; return; }
-  staffPw = nw;
-  localStorage.setItem('ikkis_pw', staffPw);
-  document.getElementById('sCurPw').value = '';
-  document.getElementById('sNewPw').value = '';
-  document.getElementById('sNewPw2').value = '';
-  err.textContent = '';
-  closeOverlay('settingsOverlay');
-  showToast('Password updated!');
+function addSection() {
+  isNewSec  = true;
+  curSecKey = null;
+  document.getElementById('secTitle').textContent = 'Add Menu Section';
+  document.getElementById('btnDelSec').style.display = 'none';
+  document.getElementById('secIcon').value = '🍽️';
+  document.getElementById('secName').value = '';
+  document.getElementById('secDesc').value = '';
+  openOv('sectionOverlay');
+}
+
+function saveSec() {
+  const icon = document.getElementById('secIcon').value.trim() || '🍽️';
+  const name = document.getElementById('secName').value.trim();
+  const desc = document.getElementById('secDesc').value.trim();
+  if (!name) { alert('Please enter a section title.'); return; }
+
+  if (isNewSec) {
+    const key = 'sec' + Date.now();
+    menuData[key] = { title: name, icon, desc, items: [] };
+    order.push(key);
+  } else {
+    menuData[curSecKey].icon  = icon;
+    menuData[curSecKey].title = name;
+    menuData[curSecKey].desc  = desc;
+  }
+  saveMenuData();
+  closeOv('sectionOverlay');
+  render();
+  showToast(isNewSec ? 'Section added!' : 'Section updated!');
+}
+
+function deleteSec() {
+  if (!curSecKey || isNewSec) return;
+  if (!confirm('Delete this entire section and all its items?')) return;
+  delete menuData[curSecKey];
+  order = order.filter(k => k !== curSecKey);
+  saveMenuData();
+  closeOv('sectionOverlay');
+  render();
+  showToast('Section deleted');
 }
 
 // ══════════════════════════════════════════
-//  ITEM EDIT
+//  ITEMS
 // ══════════════════════════════════════════
 function buildEmojiPicker(sel) {
   const row = document.getElementById('emojiPicker');
   row.innerHTML = '';
   EMOJIS.forEach(e => {
     const s = document.createElement('span');
-    s.className = 'e-pick' + (e===sel?' sel':'');
+    s.className = 'e-pick' + (e === sel ? ' sel' : '');
     s.textContent = e;
     s.onclick = () => {
-      row.querySelectorAll('.e-pick').forEach(x=>x.classList.remove('sel'));
+      row.querySelectorAll('.e-pick').forEach(x => x.classList.remove('sel'));
       s.classList.add('sel');
       document.getElementById('eEmoji').value = e;
     };
@@ -563,36 +645,38 @@ function buildEmojiPicker(sel) {
 }
 
 function openEditItem(key, idx) {
-  isNewItem = false; curItem = {key, idx};
+  isNewItem = false;
+  curItem   = { key, idx };
   const item = menuData[key].items[idx];
-  document.getElementById('itemModalTitle').textContent = 'Edit Item';
-  document.getElementById('btnDel').style.display = 'block';
-  document.getElementById('eName').value  = item.name;
-  document.getElementById('eDesc').value  = item.desc;
-  document.getElementById('ePrice').value = item.price;
-  document.getElementById('eEmoji').value = item.emoji;
-  document.getElementById('tV').checked   = (item.tags||[]).includes('v');
-  document.getElementById('tNew').checked = (item.tags||[]).includes('new');
-  document.getElementById('tPop').checked = (item.tags||[]).includes('pop');
-  document.getElementById('tS').checked   = (item.tags||[]).includes('s');
+  document.getElementById('itemTitle').textContent = 'Edit Item';
+  document.getElementById('btnDel').style.display  = 'block';
+  document.getElementById('eName').value   = item.name;
+  document.getElementById('eDesc').value   = item.desc;
+  document.getElementById('ePrice').value  = item.price;
+  document.getElementById('eEmoji').value  = item.emoji;
+  document.getElementById('tV').checked    = (item.tags || []).includes('v');
+  document.getElementById('tNew').checked  = (item.tags || []).includes('new');
+  document.getElementById('tPop').checked  = (item.tags || []).includes('pop');
+  document.getElementById('tS').checked    = (item.tags || []).includes('s');
   buildEmojiPicker(item.emoji);
-  openOverlay('itemOverlay');
+  openOv('itemOverlay');
 }
 
 function openNew(key) {
-  isNewItem = true; curItem = {key, idx:-1};
-  document.getElementById('itemModalTitle').textContent = 'Add New Item';
-  document.getElementById('btnDel').style.display = 'none';
-  document.getElementById('eName').value  = '';
-  document.getElementById('eDesc').value  = '';
-  document.getElementById('ePrice').value = '';
-  document.getElementById('eEmoji').value = '🍽️';
-  document.getElementById('tV').checked   = false;
-  document.getElementById('tNew').checked = true;
-  document.getElementById('tPop').checked = false;
-  document.getElementById('tS').checked   = false;
+  isNewItem = true;
+  curItem   = { key, idx: -1 };
+  document.getElementById('itemTitle').textContent = 'Add New Item';
+  document.getElementById('btnDel').style.display  = 'none';
+  document.getElementById('eName').value   = '';
+  document.getElementById('eDesc').value   = '';
+  document.getElementById('ePrice').value  = '';
+  document.getElementById('eEmoji').value  = '🍽️';
+  document.getElementById('tV').checked    = false;
+  document.getElementById('tNew').checked  = true;
+  document.getElementById('tPop').checked  = false;
+  document.getElementById('tS').checked    = false;
   buildEmojiPicker('🍽️');
-  openOverlay('itemOverlay');
+  openOv('itemOverlay');
 }
 
 function saveItem() {
@@ -604,48 +688,187 @@ function saveItem() {
   if (document.getElementById('tPop').checked) tags.push('pop');
   if (document.getElementById('tS').checked)   tags.push('s');
   const item = {
-    id:    isNewItem ? 'x'+Date.now() : menuData[curItem.key].items[curItem.idx].id,
+    id:    isNewItem ? 'x' + Date.now() : menuData[curItem.key].items[curItem.idx].id,
     emoji: document.getElementById('eEmoji').value.trim() || '🍽️',
     name,
     desc:  document.getElementById('eDesc').value.trim(),
-    price: parseInt(document.getElementById('ePrice').value)||0,
+    price: parseInt(document.getElementById('ePrice').value) || 0,
     tags
   };
   if (isNewItem) menuData[curItem.key].items.push(item);
   else           menuData[curItem.key].items[curItem.idx] = item;
-  saveMenuData(); closeOverlay('itemOverlay'); render();
+  saveMenuData();
+  closeOv('itemOverlay');
+  render();
   showToast(isNewItem ? 'Item added!' : 'Item updated!');
 }
 
 function deleteItem() {
   if (!curItem || isNewItem) return;
-  if (!confirm('Remove this item from the menu?')) return;
+  if (!confirm('Remove this item?')) return;
   menuData[curItem.key].items.splice(curItem.idx, 1);
-  saveMenuData(); closeOverlay('itemOverlay'); render();
+  saveMenuData();
+  closeOv('itemOverlay');
+  render();
   showToast('Item removed');
+}
+
+// ══════════════════════════════════════════
+//  FLOATING TEXT BLOCKS
+// ══════════════════════════════════════════
+function addFloatText() {
+  document.getElementById('floatTxt').value = '';
+  document.getElementById('floatPos').value = 'top-right';
+  openOv('floatOverlay');
+}
+
+function saveFloat() {
+  const txt = document.getElementById('floatTxt').value.trim();
+  if (!txt) { alert('Please enter some text.'); return; }
+  floats.push({ id: 'f' + Date.now(), text: txt, position: document.getElementById('floatPos').value });
+  localStorage.setItem('ikkis_floats', JSON.stringify(floats));
+  closeOv('floatOverlay');
+  renderFloats();
+  showToast('Text block added!');
+}
+
+function renderFloats() {
+  document.querySelectorAll('.float-text').forEach(el => el.remove());
+  const wrap = document.getElementById('menuWrapper');
+  floats.forEach(f => {
+    const d = document.createElement('div');
+    d.className = 'float-text';
+    d.style.cssText = getPosCSS(f.position);
+    // Use a text node so special chars are safe, then append delete btn separately
+    const span = document.createElement('span');
+    span.textContent = f.text;
+    d.appendChild(span);
+    const del = document.createElement('button');
+    del.className = 'float-delete';
+    del.textContent = '×';
+    del.onclick = (e) => { e.stopPropagation(); deleteFloat(f.id); };
+    d.appendChild(del);
+    wrap.appendChild(d);
+  });
+}
+
+function getPosCSS(pos) {
+  const map = {
+    'top-left':    'top:1rem;left:1rem;',
+    'top-right':   'top:1rem;right:1rem;',
+    'bottom-left': 'bottom:1rem;left:1rem;',
+    'bottom-right':'bottom:1rem;right:1rem;',
+    'center':      'top:50%;left:50%;transform:translate(-50%,-50%);'
+  };
+  return map[pos] || map['top-right'];
+}
+
+function deleteFloat(id) {
+  if (!confirm('Remove this text block?')) return;
+  floats = floats.filter(f => f.id !== id);
+  localStorage.setItem('ikkis_floats', JSON.stringify(floats));
+  renderFloats();
+  showToast('Text block removed');
+}
+
+// ══════════════════════════════════════════
+//  EDIT MODE & AUTH
+// ══════════════════════════════════════════
+function fabClick() {
+  if (editMode) {
+    // Lock
+    editMode = false;
+    document.body.classList.remove('edit-on');
+    document.getElementById('fabLabel').textContent = 'Staff Login';
+    document.getElementById('fabIcon').textContent  = '🔒';
+    document.getElementById('editFab').classList.remove('active');
+    document.getElementById('editTools').style.display = 'none';
+    applyTexts();
+    renderFloats();
+    showToast('Edit mode off');
+  } else {
+    // Show password prompt
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwError').textContent = '';
+    openOv('pwOverlay');
+    setTimeout(() => document.getElementById('pwInput').focus(), 300);
+  }
+}
+
+function checkPw() {
+  const val = document.getElementById('pwInput').value;
+  if (val === staffPw) {
+    closeOv('pwOverlay');
+    editMode = true;
+    document.body.classList.add('edit-on');
+    document.getElementById('fabLabel').textContent = 'Lock Editing';
+    document.getElementById('fabIcon').textContent  = '✅';
+    document.getElementById('editFab').classList.add('active');
+    document.getElementById('editTools').style.display = 'flex';
+    applyTexts();
+    renderFloats();
+    showToast('Edit mode unlocked — tap anything to edit');
+  } else {
+    document.getElementById('pwError').textContent = 'Incorrect password. Try again.';
+    document.getElementById('pwInput').select();
+  }
+}
+
+function openSettings() { openOv('settingsOverlay'); }
+
+function changePw() {
+  const cur = document.getElementById('sCur').value;
+  const nw  = document.getElementById('sNew').value;
+  const nw2 = document.getElementById('sNew2').value;
+  const err = document.getElementById('sErr');
+  if (cur !== staffPw) { err.textContent = 'Current password is incorrect.'; return; }
+  if (nw.length < 4)   { err.textContent = 'New password must be at least 4 characters.'; return; }
+  if (nw !== nw2)      { err.textContent = 'New passwords do not match.'; return; }
+  staffPw = nw;
+  localStorage.setItem('ikkis_pw', staffPw);
+  ['sCur','sNew','sNew2'].forEach(id => document.getElementById(id).value = '');
+  err.textContent = '';
+  closeOv('settingsOverlay');
+  showToast('Password updated!');
 }
 
 // ══════════════════════════════════════════
 //  PERSIST & EXPORT
 // ══════════════════════════════════════════
-function saveMenuData() { localStorage.setItem('ikkis_menu', JSON.stringify(menuData)); }
+function saveMenuData() {
+  localStorage.setItem('ikkis_menu', JSON.stringify(menuData));
+}
 
 function exportData() {
-  const blob = new Blob([JSON.stringify({menu:menuData, texts:textData}, null, 2)], {type:'application/json'});
-  const a = Object.assign(document.createElement('a'), {href:URL.createObjectURL(blob), download:'ikkis-backup.json'});
-  a.click(); showToast('Backup exported!');
+  const blob = new Blob(
+    [JSON.stringify({ menu: menuData, texts: textData, floats }, null, 2)],
+    { type: 'application/json' }
+  );
+  const a = Object.assign(document.createElement('a'), {
+    href: URL.createObjectURL(blob),
+    download: 'ikkis-backup.json'
+  });
+  a.click();
+  showToast('Backup exported!');
 }
 
 // ══════════════════════════════════════════
 //  OVERLAY HELPERS
 // ══════════════════════════════════════════
-function openOverlay(id)  { document.getElementById(id).classList.add('open'); }
-function closeOverlay(id) { document.getElementById(id).classList.remove('open'); }
+function openOv(id)  { document.getElementById(id).classList.add('open'); }
+function closeOv(id) { document.getElementById(id).classList.remove('open'); }
 
+// Close overlay on backdrop click
 document.querySelectorAll('.overlay').forEach(ov => {
-  ov.addEventListener('click', function(e){ if(e.target===this) closeOverlay(this.id); });
+  ov.addEventListener('click', function(e) {
+    if (e.target === this) closeOv(this.id);
+  });
 });
-document.getElementById('pwInput').addEventListener('keydown', e => { if(e.key==='Enter') checkPw(); });
+
+// Enter key in password field
+document.getElementById('pwInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkPw();
+});
 
 // ══════════════════════════════════════════
 //  NAV
@@ -653,26 +876,41 @@ document.getElementById('pwInput').addEventListener('keydown', e => { if(e.key==
 function navTo(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - document.getElementById('catNav').offsetHeight - 16, behavior:'smooth'});
+  window.scrollTo({
+    top: el.getBoundingClientRect().top + window.scrollY - document.getElementById('catNav').offsetHeight - 16,
+    behavior: 'smooth'
+  });
 }
-const catBtns = document.querySelectorAll('.cat-btn');
+
 function updateActive() {
   const h = document.getElementById('catNav').offsetHeight;
-  let cur = ORDER[0];
-  ORDER.forEach(id => { const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<=h+80) cur=id; });
-  catBtns.forEach((b,i) => b.classList.toggle('active', ORDER[i]===cur));
+  let cur = order[0];
+  order.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= h + 80) cur = id;
+  });
+  document.querySelectorAll('.cat-btn').forEach((b, i) => {
+    b.classList.toggle('active', order[i] === cur);
+  });
 }
-window.addEventListener('scroll', updateActive, {passive:true});
+window.addEventListener('scroll', updateActive, { passive: true });
 
 // ══════════════════════════════════════════
 //  FADE IN
 // ══════════════════════════════════════════
 function fadeIn() {
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';io.unobserve(e.target);}
-  }), {threshold:.08});
-  document.querySelectorAll('.menu-item').forEach((el,i) => {
-    el.style.cssText+=`opacity:0;transform:translateY(12px);transition:opacity .4s ease ${(i%8)*.05}s,transform .4s ease ${(i%8)*.05}s`;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.menu-item').forEach((el, i) => {
+    el.style.cssText += `opacity:0;transform:translateY(12px);transition:opacity .4s ease ${(i % 8) * 0.05}s,transform .4s ease ${(i % 8) * 0.05}s`;
     io.observe(el);
   });
 }
@@ -682,11 +920,15 @@ function fadeIn() {
 // ══════════════════════════════════════════
 function showToast(msg) {
   const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove('show'), 2500);
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-// ══ INIT ══
+// ══════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════
 render();
 </script>
 </body>
