@@ -758,7 +758,7 @@ function saveTxt() {
   } else {
     if(!curTxtId) return;
     textData[curTxtId] = val;
-    localStorage.setItem('ikkis_texts', JSON.stringify(textData));
+    saveCloudData();
     applyTexts();
     closeOv('textOverlay');
     showToast('Text updated!');
@@ -1199,7 +1199,7 @@ function saveFloat(){
   const txt=document.getElementById('floatTxt').value.trim();
   if(!txt){alert('Please enter some text.');return;}
   floats.push({id:'f'+Date.now(),text:txt,position:document.getElementById('floatPos').value});
-  localStorage.setItem('ikkis_floats',JSON.stringify(floats));
+  saveCloudData();
   closeOv('floatOverlay');
   renderFloats();
   showToast('Text block added!');
@@ -1229,7 +1229,7 @@ function getPosCSS(pos){
 function deleteFloat(id){
   if(!confirm('Remove this text block?'))return;
   floats=floats.filter(f=>f.id!==id);
-  localStorage.setItem('ikkis_floats',JSON.stringify(floats));
+  saveCloudData();
   renderFloats();
   showToast('Text block removed');
 }
@@ -1291,8 +1291,8 @@ function changePw(){
 // ══════════════════════════════════════════
 //  PERSIST & EXPORT
 // ══════════════════════════════════════════
-function saveMenuData(){localStorage.setItem('ikkis_menu',JSON.stringify(menuData));}
-function savePagesData(){localStorage.setItem('ikkis_pages',JSON.stringify(pagesData));}
+function saveMenuData(){saveCloudData();}
+function savePagesData(){saveCloudData();}
 function exportData(){
   const blob=new Blob([JSON.stringify({menu:menuData,texts:textData,floats,pages:pagesData},null,2)],{type:'application/json'});
   const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(blob),download:'ikkis-backup.json'});
@@ -1308,8 +1308,8 @@ function handleImport(e){
     try{
       const data=JSON.parse(ev.target.result);
       if(data.menu)  {menuData=data.menu;  order=Object.keys(menuData); saveMenuData();}
-      if(data.texts) {textData=data.texts; localStorage.setItem('ikkis_texts',JSON.stringify(textData));}
-      if(data.floats){floats=data.floats;  localStorage.setItem('ikkis_floats',JSON.stringify(floats));}
+      if(data.texts) {textData=data.texts; saveCloudData();}
+      if(data.floats){floats=data.floats; saveCloudData();}
       if(data.pages) {pagesData=data.pages; savePagesData();}
       render();
       showToast('Backup imported!');
