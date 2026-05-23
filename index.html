@@ -565,10 +565,10 @@ const BLOCK_TYPES = [
 // ══════════════════════════════════════════
 //  STATE
 // ══════════════════════════════════════════
-let menuData  = JSON.parse(localStorage.getItem('ikkis_menu')  || 'null') || deepClone(DEFAULT_MENU);
-let textData  = JSON.parse(localStorage.getItem('ikkis_texts') || 'null') || deepClone(DEFAULT_TEXTS);
-let floats    = JSON.parse(localStorage.getItem('ikkis_floats') || '[]');
-let pagesData = JSON.parse(localStorage.getItem('ikkis_pages') || '[]'); // [{id,name,icon,subtitle,blocks:[]}]
+let menuData  = deepClone(DEFAULT_MENU);
+let textData  = deepClone(DEFAULT_TEXTS);
+let floats    = [];
+let pagesData = []; // [{id,name,icon,subtitle,blocks:[]}]
 let staffPw   = localStorage.getItem('ikkis_pw') || DEFAULT_PW;
 let order     = Object.keys(menuData);
 let editMode  = false;
@@ -582,6 +582,47 @@ let curPageId=null, isNewPage=false;
 let curBlockPageId=null, curBlockIdx=null;
 
 function deepClone(o){return JSON.parse(JSON.stringify(o));}
+
+async function saveCloudData() {
+
+  const data = {
+    menuData,
+    textData,
+    pagesData,
+    floats
+  };
+
+  await setDoc(
+    doc(db, "restaurant", "main"),
+    data
+  );
+
+  console.log("Saved to Firebase");
+}
+
+function loadCloudData() {
+
+  onSnapshot(doc(db, "restaurant", "main"), (snapshot) => {
+
+    if(snapshot.exists()) {
+
+      const data = snapshot.data();
+
+      menuData = data.menuData || deepClone(DEFAULT_MENU);
+      textData = data.textData || deepClone(DEFAULT_TEXTS);
+      pagesData = data.pagesData || [];
+      floats = data.floats || [];
+
+      order = Object.keys(menuData);
+
+      render();
+
+      console.log("Realtime sync active");
+    }
+
+  });
+
+}
 
 // ══════════════════════════════════════════
 //  PAGE SWITCHING
