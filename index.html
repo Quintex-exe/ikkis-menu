@@ -589,7 +589,8 @@ async function saveCloudData() {
     menuData,
     textData,
     pagesData,
-    floats
+    floats,
+    order
   };
 
   await setDoc(
@@ -616,7 +617,7 @@ function loadCloudData() {
       pagesData = data.pagesData || [];
       floats = data.floats || [];
 
-      order = Object.keys(menuData);
+      order = data.order || Object.keys(menuData);
 
       // Update with Firebase realtime data
       render();
