@@ -602,6 +602,9 @@ async function saveCloudData() {
 
 function loadCloudData() {
 
+  // Show menu immediately for customers
+  render();
+
   onSnapshot(doc(db, "restaurant", "main"), (snapshot) => {
 
     if(snapshot.exists()) {
@@ -615,6 +618,7 @@ function loadCloudData() {
 
       order = Object.keys(menuData);
 
+      // Update with Firebase realtime data
       render();
 
       console.log("Realtime sync active");
@@ -627,7 +631,7 @@ function loadCloudData() {
 // ══════════════════════════════════════════
 //  PAGE SWITCHING
 // ══════════════════════════════════════════
-function switchPage(id) {
+window.switchPage = function(id) {
   curPage = id;
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const pg = document.getElementById('page-'+id);
@@ -644,7 +648,7 @@ function switchPage(id) {
 // ══════════════════════════════════════════
 //  RENDER MENU
 // ══════════════════════════════════════════
-function render() {
+window.render = function() {
   const wrap = document.getElementById('menuWrapper');
   wrap.innerHTML = '';
   order.forEach(key => {
@@ -727,7 +731,7 @@ function applyTexts() {
   });
 }
 
-function openTxtField(id) {
+window.openTxtField = function(id) {
   if(!editMode) return;
   txtMode  = 'field';
   curTxtId = id;
@@ -737,7 +741,7 @@ function openTxtField(id) {
   openOv('textOverlay');
 }
 
-function editSecDesc(key) {
+window.editSecDesc = function(key) {
   if(!editMode) return;
   txtMode   = 'section_desc';
   curSecKey = key;
@@ -747,7 +751,7 @@ function editSecDesc(key) {
   openOv('textOverlay');
 }
 
-function saveTxt() {
+window.saveTxt = function() {
   const val = document.getElementById('txtInput').value.trim();
   if(txtMode==='section_desc') {
     menuData[curSecKey].desc = val;
@@ -768,7 +772,7 @@ function saveTxt() {
 // ══════════════════════════════════════════
 //  SECTIONS
 // ══════════════════════════════════════════
-function editSec(key) {
+window.editSec = function(key) {
   if(!editMode) return;
   isNewSec=false; curSecKey=key;
   const sec=menuData[key];
@@ -780,7 +784,7 @@ function editSec(key) {
   openOv('sectionOverlay');
 }
 
-function addSection() {
+window.addSection = function() {
   isNewSec=true; curSecKey=null;
   document.getElementById('secTitle').textContent='Add Menu Section';
   document.getElementById('btnDelSec').style.display='none';
@@ -790,7 +794,7 @@ function addSection() {
   openOv('sectionOverlay');
 }
 
-function saveSec() {
+window.saveSec = function() {
   const icon=document.getElementById('secIcon').value.trim()||'🍽️';
   const name=document.getElementById('secName').value.trim();
   const desc=document.getElementById('secDesc').value.trim();
@@ -810,7 +814,7 @@ function saveSec() {
   showToast(isNewSec?'Section added!':'Section updated!');
 }
 
-function deleteSec() {
+window.deleteSec = function() {
   if(!curSecKey||isNewSec)return;
   if(!confirm('Delete this entire section and all its items?'))return;
   delete menuData[curSecKey];
@@ -840,7 +844,7 @@ function buildEmojiPicker(sel) {
   });
 }
 
-function openEditItem(key,idx) {
+window.openEditItem = function(key,idx) {
   isNewItem=false; curItem={key,idx};
   const item=menuData[key].items[idx];
   document.getElementById('itemTitle').textContent='Edit Item';
@@ -857,7 +861,7 @@ function openEditItem(key,idx) {
   openOv('itemOverlay');
 }
 
-function openNew(key) {
+window.openNew = function(key) {
   isNewItem=true; curItem={key,idx:-1};
   document.getElementById('itemTitle').textContent='Add New Item';
   document.getElementById('btnDel').style.display='none';
@@ -873,7 +877,7 @@ function openNew(key) {
   openOv('itemOverlay');
 }
 
-function saveItem() {
+window.saveItem = function() {
   const name=document.getElementById('eName').value.trim();
   if(!name){alert('Please enter an item name.');return;}
   const tags=[];
@@ -897,7 +901,7 @@ function saveItem() {
   showToast(isNewItem?'Item added!':'Item updated!');
 }
 
-function deleteItem() {
+window.deleteItem = function() {
   if(!curItem||isNewItem)return;
   if(!confirm('Remove this item?'))return;
   menuData[curItem.key].items.splice(curItem.idx,1);
@@ -997,7 +1001,7 @@ function esc(str){
 }
 
 // ── Page management ──
-function openNewPage() {
+window.openNewPage = function() {
   if(!editMode) return;
   isNewPage=true; curPageId=null;
   document.getElementById('newPageTitle').textContent='Add New Page';
@@ -1009,7 +1013,7 @@ function openNewPage() {
   openOv('newPageOverlay');
 }
 
-function openEditPage(id) {
+window.openEditPage = function(id) {
   isNewPage=false; curPageId=id;
   const pg=pagesData.find(p=>p.id===id);
   if(!pg) return;
@@ -1022,7 +1026,7 @@ function openEditPage(id) {
   openOv('newPageOverlay');
 }
 
-function savePage() {
+window.savePage = function() {
   const name=document.getElementById('npName').value.trim();
   if(!name){alert('Please enter a page name.');return;}
   const icon=document.getElementById('npIcon').value.trim();
@@ -1046,7 +1050,7 @@ function savePage() {
   }
 }
 
-function deletePage() {
+window.deletePage = function() {
   if(!curPageId) return;
   if(!confirm('Delete this page and all its content?')) return;
   pagesData=pagesData.filter(p=>p.id!==curPageId);
@@ -1058,7 +1062,7 @@ function deletePage() {
 }
 
 // ── Block management ──
-function openAddBlock(pageId) {
+window.openAddBlock = function(pageId) {
   curBlockPageId=pageId; curBlockIdx=null;
   const grid=document.getElementById('blockTypeGrid');
   grid.innerHTML='';
@@ -1072,7 +1076,7 @@ function openAddBlock(pageId) {
   openOv('addBlockOverlay');
 }
 
-function openEditBlockModal(pageId, idx, newType) {
+window.openEditBlockModal = function(pageId, idx, newType) {
   curBlockPageId=pageId; curBlockIdx=idx;
   const pg=pagesData.find(p=>p.id===pageId);
   if(!pg) return;
@@ -1133,7 +1137,7 @@ function removeHoursRow(i){
   if(rows[i]) rows[i].remove();
 }
 
-function saveBlock(){
+window.saveBlock = function(){
   const fields=document.getElementById('editBlockFields');
   const type=fields.dataset.type;
   const isNew=fields.dataset.isnew==='1';
@@ -1165,7 +1169,7 @@ function saveBlock(){
   showToast(isNew?'Block added!':'Block updated!');
 }
 
-function deleteBlock(){
+window.deleteBlock = function(){
   if(curBlockIdx===-1) return;
   if(!confirm('Delete this block?')) return;
   const pg=pagesData.find(p=>p.id===curBlockPageId);
@@ -1177,7 +1181,7 @@ function deleteBlock(){
   showToast('Block deleted');
 }
 
-function moveBlock(pageId, idx, dir){
+window.moveBlock = function(pageId, idx, dir){
   const pg=pagesData.find(p=>p.id===pageId);
   if(!pg) return;
   const newIdx=idx+dir;
@@ -1190,12 +1194,12 @@ function moveBlock(pageId, idx, dir){
 // ══════════════════════════════════════════
 //  FLOATING TEXT BLOCKS
 // ══════════════════════════════════════════
-function addFloatText(){
+window.addFloatText = function(){
   document.getElementById('floatTxt').value='';
   document.getElementById('floatPos').value='top-right';
   openOv('floatOverlay');
 }
-function saveFloat(){
+window.saveFloat = function(){
   const txt=document.getElementById('floatTxt').value.trim();
   if(!txt){alert('Please enter some text.');return;}
   floats.push({id:'f'+Date.now(),text:txt,position:document.getElementById('floatPos').value});
@@ -1237,7 +1241,7 @@ function deleteFloat(id){
 // ══════════════════════════════════════════
 //  EDIT MODE & AUTH
 // ══════════════════════════════════════════
-function fabClick(){
+window.fabClick = function(){
   if(editMode){
     editMode=false;
     document.body.classList.remove('edit-on');
@@ -1254,7 +1258,7 @@ function fabClick(){
     setTimeout(()=>document.getElementById('pwInput').focus(),300);
   }
 }
-function checkPw(){
+window.checkPw = function(){
   const val=document.getElementById('pwInput').value;
   if(val===staffPw){
     closeOv('pwOverlay');
@@ -1271,8 +1275,8 @@ function checkPw(){
     document.getElementById('pwInput').select();
   }
 }
-function openSettings(){openOv('settingsOverlay');}
-function changePw(){
+window.openSettings = function(){openOv('settingsOverlay');}
+window.changePw = function(){
   const cur=document.getElementById('sCur').value;
   const nw=document.getElementById('sNew').value;
   const nw2=document.getElementById('sNew2').value;
@@ -1293,14 +1297,14 @@ function changePw(){
 // ══════════════════════════════════════════
 function saveMenuData(){saveCloudData();}
 function savePagesData(){saveCloudData();}
-function exportData(){
+window.exportData = function(){
   const blob=new Blob([JSON.stringify({menu:menuData,texts:textData,floats,pages:pagesData},null,2)],{type:'application/json'});
   const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(blob),download:'ikkis-backup.json'});
   a.click();
   showToast('Backup exported!');
 }
-function importBackup(){document.getElementById('importFile').click();}
-function handleImport(e){
+window.importBackup = function(){document.getElementById('importFile').click();}
+window.handleImport = function(e){
   const file=e.target.files[0];
   if(!file)return;
   const reader=new FileReader();
@@ -1323,7 +1327,7 @@ function handleImport(e){
 //  OVERLAY HELPERS
 // ══════════════════════════════════════════
 function openOv(id){document.getElementById(id).classList.add('open');}
-function closeOv(id){document.getElementById(id).classList.remove('open');}
+window.closeOv = function(id){document.getElementById(id).classList.remove('open');}
 document.querySelectorAll('.overlay').forEach(ov=>{
   ov.addEventListener('click',function(e){if(e.target===this)closeOv(this.id);});
 });
@@ -1332,7 +1336,7 @@ document.getElementById('pwInput').addEventListener('keydown',e=>{if(e.key==='En
 // ══════════════════════════════════════════
 //  CATEGORY NAV
 // ══════════════════════════════════════════
-function navTo(id){
+window.navTo = function(id){
   const el=document.getElementById(id);
   if(!el)return;
   const offset=document.getElementById('catNav').offsetHeight+document.getElementById('topNav').offsetHeight+16;
