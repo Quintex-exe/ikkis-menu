@@ -473,6 +473,7 @@ const db = getFirestore(app);
 // ══════════════════════════════════════════
 //  CONSTANTS & DEFAULTS
 // ══════════════════════════════════════════
+const DATA_VERSION = 'IKKIS_FINAL_V2';
 const DEFAULT_PW = 'ikkis2021';
 const EMOJIS = ['☕','🍫','🥛','🤍','🖤','☁️','🌿','🧡','🫖','🫧','🧊','🍋','🍵','🍓','🌸','🍮','🥐','🥪','🍳','🍝','🍟','🥗','🍦','🥭','🍌','🥬','🥃','🍰','🍩','🥤','🍶','🫗','🥙','🧁','🍪','🍺','🍷','🍸','🍹','🧃'];
 
@@ -651,6 +652,7 @@ function deepClone(o){return JSON.parse(JSON.stringify(o));}
 async function saveCloudData() {
 
   const data = {
+    schemaVersion: DATA_VERSION,
     menuData,
     textData,
     pagesData,
@@ -668,26 +670,53 @@ async function saveCloudData() {
 
 function loadCloudData() {
 
-  // Show menu immediately for customers
   render();
 
-  onSnapshot(doc(db, "restaurant", "main"), (snapshot) => {
+  onSnapshot(doc(db, "restaurant", "main"), async (snapshot) => {
 
     if(snapshot.exists()) {
 
       const data = snapshot.data();
 
+      // Force new clean menu if old database detected
+      if(data.schemaVersion !== DATA_VERSION) {
+
+        menuData = deepClone(DEFAULT_MENU);
+        textData = deepClone(DEFAULT_TEXTS);
+        pagesData = [];
+        floats = [];
+        order = Object.keys(DEFAULT_MENU);
+
+        await saveCloudData();
+
+        render();
+
+        console.log("Database upgraded to latest menu");
+        return;
+      }
+
       menuData = data.menuData || deepClone(DEFAULT_MENU);
       textData = data.textData || deepClone(DEFAULT_TEXTS);
       pagesData = data.pagesData || [];
       floats = data.floats || [];
-
       order = data.order || Object.keys(menuData);
 
-      // Update with Firebase realtime data
       render();
 
       console.log("Realtime sync active");
+    } else {
+
+      menuData = deepClone(DEFAULT_MENU);
+      textData = deepClone(DEFAULT_TEXTS);
+      pagesData = [];
+      floats = [];
+      order = Object.keys(DEFAULT_MENU);
+
+      await saveCloudData();
+
+      render();
+
+      console.log("Fresh database initialized");
     }
 
   });
