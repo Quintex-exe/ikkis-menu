@@ -447,7 +447,29 @@
 
 <div id="toast">Saved ✓</div>
 
-<script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  onSnapshot
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC6E4qFRzAKR2XFyVCJIoV_iTw9mkuQMqE",
+  authDomain: "ikkis-menu.firebaseapp.com",
+  projectId: "ikkis-menu",
+  storageBucket: "ikkis-menu.firebasestorage.app",
+  messagingSenderId: "146479946836",
+  appId: "1:146479946836:web:a7c54473aaf91bed34a1c1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+  
 // ══════════════════════════════════════════
 //  CONSTANTS & DEFAULTS
 // ══════════════════════════════════════════
