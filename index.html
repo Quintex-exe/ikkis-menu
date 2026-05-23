@@ -477,69 +477,134 @@ const DEFAULT_PW = 'ikkis2021';
 const EMOJIS = ['☕','🍫','🥛','🤍','🖤','☁️','🌿','🧡','🫖','🫧','🧊','🍋','🍵','🍓','🌸','🍮','🥐','🥪','🍳','🍝','🍟','🥗','🍦','🥭','🍌','🥬','🥃','🍰','🍩','🥤','🍶','🫗','🥙','🧁','🍪','🍺','🍷','🍸','🍹','🧃'];
 
 const DEFAULT_MENU = {
-  coffee:{title:'Coffee',icon:'☕',desc:'Single-origin beans, roasted slow & pulled with care',items:[
-    {id:'c1',emoji:'🖤',name:'Espresso',desc:'Concentrated, bold & unapologetic. Single or double shot.',price:120,tags:['v']},
-    {id:'c2',emoji:'☁️',name:'Cappuccino',desc:'Velvety microfoam, equal parts espresso, steamed milk & froth.',price:160,tags:['pop']},
-    {id:'c3',emoji:'🤍',name:'Flat White',desc:'Ristretto-based, silky & stronger than a latte.',price:175,tags:[]},
-    {id:'c4',emoji:'🥛',name:'Café Latte',desc:'Smooth, mellow — espresso cushioned in warm steamed milk.',price:165,tags:[]},
-    {id:'c5',emoji:'🍫',name:'Mocha',desc:'Espresso + dark chocolate + steamed milk. Topped with cocoa dust.',price:185,tags:['pop']},
-    {id:'c6',emoji:'🌿',name:'Ikkis Signature Brew',desc:'Cold brew espresso, coconut milk, cardamom & jaggery.',price:220,tags:['new']},
-    {id:'c7',emoji:'🫖',name:'Americano',desc:'Espresso extended with hot water. Clean, honest, no-frills.',price:140,tags:[]},
-    {id:'c8',emoji:'🧡',name:'Caramel Macchiato',desc:'Vanilla-sweetened steamed milk, espresso poured over, drizzled with caramel.',price:195,tags:[]},
-    {id:'c9',emoji:'🫧',name:'Filter Coffee',desc:'South Indian decoction, full-cream milk, served in a traditional tumbler-davara.',price:130,tags:['v']},
+  coffee:{title:'Coffee',icon:'☕',desc:'Freshly brewed coffee selections',items:[
+    {id:'c1',emoji:'☕',name:'Espresso',desc:'Classic espresso shot',price:120,tags:['v']},
+    {id:'c2',emoji:'☕',name:'Americano',desc:'Espresso with hot water',price:140,tags:['v']},
+    {id:'c3',emoji:'☕',name:'Cappuccino',desc:'Rich foam cappuccino',price:160,tags:['pop']},
+    {id:'c4',emoji:'☕',name:'Latte',desc:'Smooth milk coffee',price:160,tags:['v']},
+    {id:'c5',emoji:'☕',name:'Mocha',desc:'Chocolate coffee blend',price:180,tags:['pop']},
+    {id:'c6',emoji:'🍵',name:'Matcha',desc:'Japanese matcha latte',price:200,tags:['new']},
   ]},
-  cold:{title:'Cold Drinks',icon:'🧊',desc:'Chilled, refreshed & ready for a Kolkata afternoon',items:[
-    {id:'d1',emoji:'🥃',name:'Cold Brew',desc:'12-hour steeped, smooth & low-acid. Served over ice.',price:200,tags:['pop']},
-    {id:'d2',emoji:'☕',name:'Iced Latte',desc:'Double shot espresso poured over ice and chilled milk.',price:175,tags:[]},
-    {id:'d3',emoji:'🍋',name:'Sparkling Lemonade',desc:'Fresh Kagzi lemon, soda, mint & black salt.',price:150,tags:['v']},
-    {id:'d4',emoji:'🍵',name:'Iced Matcha Latte',desc:'Ceremonial-grade matcha whisked with oat milk and poured over ice.',price:210,tags:['new','v']},
-    {id:'d5',emoji:'🍓',name:'Berry Cooler',desc:'Strawberry & blueberry blended with rose water, topped with soda.',price:170,tags:['v']},
+
+  iced:{title:'Iced',icon:'🧊',desc:'Cold refreshing drinks',items:[
+    {id:'i1',emoji:'🧊',name:'Classic Cold coffee',desc:'Cold brewed coffee',price:130,tags:['v']},
+    {id:'i2',emoji:'🧊',name:'Iced Americano',desc:'Chilled americano',price:130,tags:['v']},
+    {id:'i3',emoji:'🧊',name:'Cold coffee with ice-cream',desc:'Cold coffee topped with ice cream',price:150,tags:['pop']},
+    {id:'i4',emoji:'🧊',name:'Cold Mocha',desc:'Chocolate cold coffee',price:150,tags:['v']},
+    {id:'i5',emoji:'🧊',name:'Hazelnut cold coffee',desc:'Hazelnut flavored cold coffee',price:180,tags:['new']},
+    {id:'i6',emoji:'🧊',name:'Iced Matcha',desc:'Cold matcha latte',price:190,tags:['new']},
+    {id:'i7',emoji:'🍋',name:'Lemon iced tea',desc:'Refreshing lemon tea',price:100,tags:['v']},
   ]},
-  tea:{title:'Tea & Infusions',icon:'🍵',desc:'Slow-steeped leaves from Darjeeling & Assam',items:[
-    {id:'t1',emoji:'🫖',name:'Masala Chai',desc:'Ginger, cardamom, black pepper, cinnamon & Assam CTC.',price:110,tags:['pop','v']},
-    {id:'t2',emoji:'🌸',name:'Rose Kashmiri Kahwa',desc:'Green tea, saffron, cinnamon, almonds, rose petals.',price:160,tags:['v']},
-    {id:'t3',emoji:'🍋',name:'Lemon Ginger Honey',desc:'Black tea base, fresh ginger, lemon wedge & raw honey.',price:130,tags:['v']},
-    {id:'t4',emoji:'🌿',name:'Darjeeling First Flush',desc:'Delicate, floral & golden. Finest spring harvest.',price:180,tags:['s']},
+
+  soda:{title:'Soda',icon:'🥤',desc:'Sparkling soda refreshers',items:[
+    {id:'s1',emoji:'🥤',name:'Blueberry',desc:'Blueberry soda',price:80,tags:['v']},
+    {id:'s2',emoji:'🥤',name:'Strawberry',desc:'Strawberry soda',price:80,tags:['v']},
+    {id:'s3',emoji:'🥤',name:'Cranberry',desc:'Cranberry soda',price:80,tags:['v']},
+    {id:'s4',emoji:'🥤',name:'Mojito',desc:'Mint mojito soda',price:80,tags:['pop']},
   ]},
-  food:{title:'All-Day Bites',icon:'🍳',desc:'Kitchen runs 8 AM – 10 PM · Last order 9:30 PM',items:[
-    {id:'f1',emoji:'🥐',name:'Butter Croissant',desc:'Laminated, flaky & fresh-baked. Served warm with house jam.',price:140,tags:['v']},
-    {id:'f2',emoji:'🥪',name:'Ikkis Club Sandwich',desc:'Triple-decker — smoked chicken, cheddar, lettuce, tomato & chipotle mayo.',price:280,tags:['pop']},
-    {id:'f3',emoji:'🍳',name:'Eggs Benedict',desc:'Poached eggs, sautéed spinach, toasted English muffin & hollandaise.',price:320,tags:['s']},
-    {id:'f4',emoji:'🫓',name:'Avocado Toast',desc:'Smashed avo on sourdough, chilli flakes, microgreens, lemon zest.',price:260,tags:['v']},
-    {id:'f5',emoji:'🍝',name:'Truffle Pasta',desc:'Pappardelle tossed in truffle cream, parmigiano & crispy shallots.',price:380,tags:['s','v']},
-    {id:'f6',emoji:'🍟',name:'Loaded Fries',desc:'Crispy fries topped with nacho cheese, jalapeño & sriracha aioli.',price:220,tags:['v']},
-    {id:'f7',emoji:'🥗',name:'Garden Grain Bowl',desc:'Quinoa, roasted vegetables, hummus, pomegranate & tahini dressing.',price:290,tags:['v','new']},
+
+  chai:{title:'Chai',icon:'🍵',desc:'Indian tea specials',items:[
+    {id:'t1',emoji:'🍵',name:'Masala Chai',desc:'Traditional masala chai',price:60,tags:['pop']},
+    {id:'t2',emoji:'🍵',name:'Ginger Chai',desc:'Fresh ginger tea',price:70,tags:['v']},
+    {id:'t3',emoji:'🍵',name:'Green Tea',desc:'Healthy green tea',price:60,tags:['v']},
+    {id:'t4',emoji:'🍵',name:'Lemongrass Tea',desc:'Lemongrass infused tea',price:60,tags:['v']},
+    {id:'t5',emoji:'🍵',name:'Assam Tea',desc:'Strong Assam tea',price:80,tags:['v']},
+    {id:'t6',emoji:'🍵',name:'Cardamom Tea',desc:'Elaichi chai',price:60,tags:['v']},
+    {id:'t7',emoji:'🍵',name:'Ginger Lemon Tea',desc:'Ginger lemon herbal tea',price:70,tags:['v']},
   ]},
-  desserts:{title:'Desserts',icon:'🍰',desc:'Handcrafted in-house — worth saving room for',items:[
-    {id:'ds1',emoji:'🍮',name:'Burnt Basque Cheesecake',desc:'Creamy centre, caramelised top. Served with berry compote.',price:220,tags:['pop']},
-    {id:'ds2',emoji:'🍫',name:'Dark Chocolate Fondant',desc:'70% dark chocolate, molten centre. Paired with vanilla ice cream.',price:240,tags:['s']},
-    {id:'ds3',emoji:'🍦',name:'Affogato',desc:'Two scoops of vanilla gelato drowned in hot espresso.',price:180,tags:[]},
-    {id:'ds4',emoji:'🥭',name:'Mango Panna Cotta',desc:'Silky vanilla cream, Alphonso mango coulis, toasted coconut.',price:195,tags:['new','v']},
+
+  hotchocolate:{title:'Hot Chocolate',icon:'🍫',desc:'Warm chocolate drinks',items:[
+    {id:'h1',emoji:'🍫',name:'Normal',desc:'Classic hot chocolate',price:180,tags:['v']},
+    {id:'h2',emoji:'🍫',name:'Protein',desc:'Protein hot chocolate',price:220,tags:['new']},
   ]},
-  smoothies:{title:'Smoothies',icon:'🥤',desc:'Blended fresh to order — no concentrates, no shortcuts',items:[
-    {id:'sm1',emoji:'🍌',name:'Peanut Butter Banana',desc:'Frozen banana, almond milk, peanut butter, cacao nibs & honey.',price:210,tags:['pop','v']},
-    {id:'sm2',emoji:'🥬',name:'Green Detox',desc:'Spinach, cucumber, apple, ginger, lemon & coconut water.',price:200,tags:['v']},
-    {id:'sm3',emoji:'🍓',name:'Strawberry Acai',desc:'Acai base, frozen strawberries, oat milk & lime.',price:220,tags:['v']},
-    {id:'sm4',emoji:'🥭',name:'Mango Lassi Smoothie',desc:'Alphonso mango, thick yoghurt, cardamom, saffron & rose water.',price:190,tags:['v']},
+
+  sandwiches:{title:'Sandwiches',icon:'🥪',desc:'Toasted & grilled sandwiches',items:[
+    {id:'sw1',emoji:'🥪',name:'Veggie Reggie',desc:'Loaded veggie sandwich',price:120,tags:['v']},
+    {id:'sw2',emoji:'🥪',name:'Veg Cheese',desc:'Cheese veggie sandwich',price:160,tags:['v']},
+    {id:'sw3',emoji:'🥪',name:'Fiery Paneer',desc:'Spicy paneer sandwich',price:160,tags:['pop']},
+    {id:'sw4',emoji:'🥪',name:'Cucumber',desc:'Fresh cucumber sandwich',price:160,tags:['v']},
+    {id:'sw5',emoji:'🥪',name:'Mayo Butter',desc:'Creamy mayo butter sandwich',price:140,tags:['v']},
+    {id:'sw6',emoji:'🥪',name:'Egg Cheese',desc:'Egg and cheese sandwich',price:160,tags:[]},
+    {id:'sw7',emoji:'🥪',name:'Chk Salami Cheese',desc:'Chicken salami sandwich',price:165,tags:['pop']},
+    {id:'sw8',emoji:'🥪',name:'Chk Sausage Cheese',desc:'Chicken sausage sandwich',price:165,tags:['pop']},
+  ]},
+
+  waffles:{title:'Protein Waffle',icon:'🧇',desc:'High protein waffle delights',items:[
+    {id:'w1',emoji:'🧇',name:'Milk Chocolate',desc:'Protein waffle',price:'90/150',tags:['v']},
+    {id:'w2',emoji:'🧇',name:'Dark Chocolate',desc:'Dark chocolate waffle',price:'90/160',tags:['v']},
+    {id:'w3',emoji:'🧇',name:'Almond Vanilla',desc:'Vanilla almond waffle',price:'90/160',tags:['v']},
+    {id:'w4',emoji:'🧇',name:'White Chocolate',desc:'White chocolate waffle',price:'90/160',tags:['v']},
+    {id:'w5',emoji:'🧇',name:'Triple Chocolate',desc:'Triple chocolate waffle',price:'100/170',tags:['pop']},
+    {id:'w6',emoji:'🧇',name:'Kitkat Nutella',desc:'Nutella waffle',price:'100/180',tags:['pop']},
+    {id:'w7',emoji:'🧇',name:'Oreo Waffle',desc:'Oreo waffle',price:'100/180',tags:['v']},
+  ]},
+
+  yogurt:{title:'Fresh Yogurt Cup',icon:'🍨',desc:'Fresh yogurt specials',items:[
+    {id:'y1',emoji:'🍨',name:'Chocolate Crunch',desc:'Crunchy chocolate yogurt',price:180,tags:['v']},
+    {id:'y2',emoji:'🍨',name:'Pink Rush',desc:'Berry yogurt cup',price:180,tags:['v']},
+    {id:'y3',emoji:'🍓',name:'Fresh Fruit Cup',desc:'Seasonal fresh fruits',price:'70/140',tags:['new']},
+  ]},
+
+  toasts:{title:'Toasts',icon:'🍞',desc:'Crispy toast selections',items:[
+    {id:'to1',emoji:'🍞',name:'Jam',desc:'Jam toast',price:70,tags:['v']},
+    {id:'to2',emoji:'🍞',name:'Maska',desc:'Butter toast',price:90,tags:['v']},
+    {id:'to3',emoji:'🍞',name:'Cheese',desc:'Cheese toast',price:110,tags:['v']},
+    {id:'to4',emoji:'🍞',name:'Chili Cheese',desc:'Spicy cheese toast',price:140,tags:['pop']},
+    {id:'to5',emoji:'🍞',name:'Cheese Garlic',desc:'Garlic cheese toast',price:160,tags:['v']},
+    {id:'to6',emoji:'🍞',name:'French Milk',desc:'Sweet french toast',price:180,tags:['new']},
+    {id:'to7',emoji:'🍞',name:'Chocolate',desc:'Chocolate toast',price:160,tags:['v']},
+    {id:'to8',emoji:'🥑',name:'Avacado',desc:'Avocado toast',price:160,tags:['new']},
+  ]},
+
+  oats:{title:'Muesli/Oats',icon:'🥣',desc:'Healthy breakfast bowls',items:[
+    {id:'o1',emoji:'🥣',name:'Grain Full',desc:'Healthy grain bowl',price:100,tags:['v']},
+    {id:'o2',emoji:'🥣',name:'Dark Chocolate',desc:'Chocolate oats',price:130,tags:['v']},
+    {id:'o3',emoji:'🥣',name:'Masala Oats',desc:'Savory masala oats',price:100,tags:['v']},
+  ]},
+
+  eggs:{title:'Eggs',icon:'🍳',desc:'Egg breakfast menu',items:[
+    {id:'e1',emoji:'🍳',name:'2 Organic Boiled Eggs',desc:'Simple boiled eggs',price:80,tags:[]},
+    {id:'e2',emoji:'🍳',name:'Scrambled Eggs',desc:'Creamy scrambled eggs',price:100,tags:['pop']},
+    {id:'e3',emoji:'🍳',name:'Egg Omlette + Toast of Choice',desc:'Classic breakfast combo',price:110,tags:['pop']},
+  ]},
+
+  maggie:{title:'Maggie',icon:'🍜',desc:'Instant noodle favorites',items:[
+    {id:'m1',emoji:'🍜',name:'Jain',desc:'Jain maggie',price:90,tags:['v']},
+    {id:'m2',emoji:'🍜',name:'Plain',desc:'Classic maggie',price:90,tags:['v']},
+    {id:'m3',emoji:'🍜',name:'Veggie',desc:'Veg loaded maggie',price:140,tags:['v']},
+    {id:'m4',emoji:'🍜',name:'Egg',desc:'Egg maggie',price:160,tags:[]},
+    {id:'m5',emoji:'🍜',name:'Butter/Cheese',desc:'Cheesy butter maggie',price:150,tags:['pop']},
+    {id:'m6',emoji:'🍜',name:'Ramen',desc:'Ramen style noodles',price:190,tags:['new']},
+  ]},
+
+  shakes:{title:'Shakes N Smoothies',icon:'🥤',desc:'Creamy shakes and smoothies',items:[
+    {id:'sh1',emoji:'🥤',name:'Vanilla',desc:'Vanilla shake',price:120,tags:['v']},
+    {id:'sh2',emoji:'🥤',name:'Chocolate',desc:'Chocolate shake',price:120,tags:['v']},
+    {id:'sh3',emoji:'🥤',name:'Strawberry',desc:'Strawberry shake',price:120,tags:['v']},
+    {id:'sh4',emoji:'🥤',name:'Banana',desc:'Banana shake',price:120,tags:['v']},
+    {id:'sh5',emoji:'🥤',name:'Brownie',desc:'Brownie shake',price:120,tags:['pop']},
+    {id:'sh6',emoji:'🥤',name:'Choco Banana Smoothie',desc:'Chocolate banana blend',price:140,tags:['pop']},
+    {id:'sh7',emoji:'🥤',name:'Mango Smoothie',desc:'Fresh mango smoothie',price:160,tags:['new']},
+    {id:'sh8',emoji:'🥤',name:'(Seasonal)',desc:'Seasonal special smoothie',price:180,tags:['new']},
   ]}
 };
 
 const DEFAULT_TEXTS = {
-  heroName:'Ikkis',
-  heroBadge:'EST. 2021 · KOLKATA',
-  heroSubtitle:'café & kitchen',
-  heroTagline:'Where every cup tells a story',
+  heroName:'IKKIS 21',
+  heroBadge:'EST. 2021',
+  heroSubtitle:'coffee',
+  heroTagline:'Open every day · 10AM - 11PM',
   heroScrollLabel:'SCROLL',
-  specialsLabel:"Today's Special",
-  specialsTitle:"Chef's Table · Weekend Brunch",
-  specialsBody:'Saturday & Sunday, 9 AM – 1 PM. A curated spread: eggs any style, artisan bread, seasonal fruits & bottomless filter coffee.',
-  specialsTime:'Sat & Sun · 9:00 – 13:00',
-  footerLogo:'Ikkis',
-  footerTagline:'café & kitchen · est. 2021',
-  footerAddress:'21 Park Street, Kolkata – 700 016',
-  footerHours:'Open daily · 8:00 AM – 11:00 PM',
-  footerContact:'+91 98300 12345 · hello@ikkiscafe.in',
-  footerNote:'Scan this QR to share our menu · Prices subject to change · © 2025 Ikkis'
+  specialsLabel:"IKKIS 21",
+  specialsTitle:"Open Every Day",
+  specialsBody:'Shop No.2, Naminath Luxeria, Building No.72, SVP Nagar, Near Junkidevi School, Andheri (W), Mumbai - 400053',
+  specialsTime:'Reservation · 9702121554',
+  footerLogo:'IKKIS 21',
+  footerTagline:'coffee · shakes · snacks',
+  footerAddress:'Mumbai, India',
+  footerHours:'Open daily · 10AM - 11PM',
+  footerContact:'9702121554 · hello.ikkis21@gmail.com',
+  footerNote:'Thanks for visiting IKKIS 21'
 };
 
 const TXT_LABELS = {
