@@ -334,7 +334,7 @@
     <label>Description</label>
     <textarea id="eDesc"></textarea>
     <label>Price (₹)</label>
-    <input id="ePrice" type="number" placeholder="180"/>
+    <input id="ePrice" type="text" placeholder="180 or 90/160"/>
     <label>Tags</label>
     <div class="tag-checks">
       <label class="tag-check"><input type="checkbox" id="tV"> Vegetarian</label>
@@ -985,7 +985,7 @@ window.saveItem = function() {
     emoji:document.getElementById('eEmoji').value.trim()||'🍽️',
     name,
     desc:document.getElementById('eDesc').value.trim(),
-    price:parseInt(document.getElementById('ePrice').value)||0,
+    price:document.getElementById('ePrice').value.trim(),
     tags
   };
   if(isNewItem) menuData[curItem.key].items.push(item);
