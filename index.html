@@ -13,7 +13,53 @@
     }
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
-    body{background:var(--warm-white);color:var(--espresso);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden;}
+    body.loading-state #pagesContainer,
+body.loading-state footer,
+body.loading-state .category-nav,
+body.loading-state .top-nav{
+opacity:0;
+pointer-events:none;
+}
+
+body{
+background-color:var(--warm-white);
+background-image:
+radial-gradient(circle at 12% 18%, rgba(196,125,62,.08) 0%, transparent 24%),
+radial-gradient(circle at 88% 12%, rgba(212,168,83,.06) 0%, transparent 20%),
+radial-gradient(circle at 78% 82%, rgba(196,125,62,.05) 0%, transparent 24%),
+radial-gradient(circle at 18% 78%, rgba(122,140,110,.04) 0%, transparent 20%),
+linear-gradient(rgba(255,255,255,.72), rgba(255,255,255,.72)),
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23c47d3e' stroke-opacity='.10' stroke-width='1.4'%3E%3Cpath d='M42 58c10-14 28-14 38 0-10 14-28 14-38 0Z'/%3E%3Cpath d='M138 118c10-14 28-14 38 0-10 14-28 14-38 0Z'/%3E%3Cpath d='M82 168c10-14 28-14 38 0-10 14-28 14-38 0Z'/%3E%3C/g%3E%3C/svg%3E");
+background-size:auto,auto,auto,auto,100% 100%,240px 240px;
+color:var(--espresso);
+font-family:'DM Sans',sans-serif;
+min-height:100vh;
+overflow-x:hidden;
+position:relative;
+transition:opacity .35s ease;
+}
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+pointer-events:none;
+opacity:.05;
+z-index:-1;
+background-image:
+repeating-radial-gradient(circle at 0 0, transparent 0, rgba(0,0,0,.18) 1px, transparent 2px);
+background-size:8px 8px;
+}
+
+body::after{
+content:'';
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-1;
+background:
+linear-gradient(to bottom, rgba(255,255,255,.0), rgba(0,0,0,.04));
+}
 
     /* ── HERO ── */
     .hero{position:relative;background:var(--espresso);min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:3rem 2rem 6rem;}
@@ -204,7 +250,7 @@
     @media(max-width:480px){.item-name-row{flex-direction:column;gap:.2rem}.block-type-grid{grid-template-columns:1fr}}
   </style>
 </head>
-<body>
+<body class="loading-state">
 
 <!-- ══ HERO ══ -->
 <section class="hero" id="heroSection">
@@ -691,7 +737,8 @@ function loadCloudData() {
 
         render();
 
-        console.log("Database upgraded to latest menu");
+        document.body.classList.remove('loading-state');
+      console.log("Database upgraded to latest menu");
         return;
       }
 
@@ -703,6 +750,7 @@ function loadCloudData() {
 
       render();
 
+      document.body.classList.remove('loading-state');
       console.log("Realtime sync active");
     } else {
 
@@ -716,6 +764,7 @@ function loadCloudData() {
 
       render();
 
+      document.body.classList.remove('loading-state');
       console.log("Fresh database initialized");
     }
 
@@ -1486,5 +1535,14 @@ function showToast(msg){
 // ══════════════════════════════════════════
 loadCloudData();
 </script>
+
+<script>
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.body.classList.remove('loading-state');
+  },1800);
+});
+</script>
+
 </body>
 </html>
